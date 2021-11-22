@@ -1,0 +1,28 @@
+.navContainer {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(223, 253, 255);
+  box-sizing: border-box;
+  margin-left: 50px;
+  margin-top: 50px;
+
+  .imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .imgElement {
+      margin-bottom: 50px;
+      cursor: pointer;
+
+      p {
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        font-style: inherit;
+        // text-shadow: 1px 2px black;
+        text-align: center;
+        // text-shadow: 1px 2px rgb(0 0 0);
+      }
+    }
+  }
+}
