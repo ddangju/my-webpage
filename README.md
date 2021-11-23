@@ -1,4 +1,4 @@
-![캡처](https://user-images.githubusercontent.com/68775082/143023660-09886db5-d6dc-42be-a566-54274d6cabb5.PNG)
+<img src="https://user-images.githubusercontent.com/68775082/143023660-09886db5-d6dc-42be-a566-54274d6cabb5.PNG" width="700px"/>
 
 
 
