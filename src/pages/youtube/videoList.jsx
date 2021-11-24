@@ -1,17 +1,15 @@
 import React from "react";
 import VideoItem from "../youtube/videoItem";
-
+import "../../styles/videoList.scss";
 const VideoList = (props) => {
   // console.log(props.video, "List");
 
   return (
-    <div>
-      <ul>
-        {props.video.map((item) => (
-          <VideoItem key={item.id} item={item} />
-        ))}
-      </ul>
-    </div>
+    <ul className="videos">
+      {props.video.map((item) => (
+        <VideoItem key={item.id} item={item} />
+      ))}
+    </ul>
   );
 };
 
