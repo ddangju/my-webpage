@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(255, 255, 204);
+}
+
+.navContainer_youtube {
+  background-color: rgb(255, 199, 199);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5em 0em;
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    .logo_youtube {
+      font-size: 2em;
+      font-weight: bolder;
+      margin-left: 0.3em;
+    }
+  }
+  .searchContainer {
+    display: flex;
+    height: 2.8em;
+    width: 50%;
+    align-items: center;
+    .search {
+      height: 100%;
+      width: 100%;
+      border: 1px solid lightgray;
+      padding: 1em;
+      font-size: 1.3em;
+      margin-right: 1%;
+    }
+  }
+  .searchImg {
+    height: 80%;
+    cursor: pointer;
+  }
+  .userName {
+    font-size: 1.1em;
+    font-weight: 900;
+  }
+}
