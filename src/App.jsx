@@ -9,12 +9,18 @@ import YoutubeMain from "./pages/youtube/youtubeMain";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
-function App() {
+function App(props) {
+  const youtubeKey = props.youtube;
+  // console.log(youtubeKey, "앱");
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/youtubeMain" component={YoutubeMain}></Route>
+          <Route
+            exact
+            path="/youtubeMain"
+            component={() => <YoutubeMain youtubeKey={youtubeKey} />}
+          ></Route>
           <>
             <div className="container">
               {/* <div className="navContainer"></div> */}
@@ -24,7 +30,13 @@ function App() {
                 <Route exact path="/intro" component={Intro}></Route>
                 <Route exact path="/game" component={Game}></Route>
                 <Route exact path="/todo" component={Todo}></Route>
-                <Route exact path="/youtube" component={Youtube}></Route>
+                <Route
+                  exact
+                  path="/youtube"
+                  component={() => <Youtube youtubeKey={youtubeKey} />}
+                  // component={Youtube}
+                  // test={test}
+                ></Route>
               </div>
             </div>
             <Footer />

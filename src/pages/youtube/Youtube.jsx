@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../../styles/youtube.scss";
 
-const Youtube = () => {
+const Youtube = (props) => {
+  console.log(props.youtubeKey.mostPopular(), "나유튜브");
   // console.log(useLocation);
+  // const youtubeKey = props.youtubeKey;
   let [inputValue, setInputValue] = useState("");
   const test = useHistory();
   const handleChange = (e) => {
@@ -45,7 +47,11 @@ const Youtube = () => {
                   onClick={() =>
                     test.push({
                       pathname: "/youtubeMain",
-                      state: inputValue,
+                      state: {
+                        inputValue: inputValue,
+                        // youtubeKey: youtubeKey,
+                        youtubeKey: props.youtubeKey,
+                      },
                     })
                   }
                 >

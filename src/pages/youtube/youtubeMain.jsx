@@ -8,50 +8,47 @@ const YoutubeMain = (props) => {
   const [video, setVideo] = useState([]);
   let [name, setName] = useState();
   const history = useHistory();
+  console.log(props.youtubeKey);
+  const youtubeKey = props.youtubeKey;
+  // console.log(youtubeKey, "나유튜브메인");
+
+  // const youtube = new Youtube();
 
   const search = (query) => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => setVideo(result.items))
-      .catch((error) => console.log("error", error));
-    // var requestOptions = {
+    youtubeKey.search(query).then((item) => setVideo(item));
+    // const requestOptions = {
     //   method: "GET",
     //   redirect: "follow",
     // };
-
     // fetch(
-    //   `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=AIzaSyCT4sWJm_bgXreVMubNOjQ5-MgwfQjJEhM&key=AIzaSyCT4sWJm_bgXreVMubNOjQ5-MgwfQjJEhM`,
+    //   `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA`,
     //   requestOptions
     // )
     //   .then((response) => response.json())
+    //   .then((result) =>
+    //     result.items.map((item) => ({ ...item, id: item.id.videoId }))
+    //   )
+    //   .then((items) => setVideo(items))
     //   // .then((result) => setVideo(result.items))
     //   .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(
-      "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => setVideo(result.items))
-      .catch((error) => console.log("error", error));
+    youtubeKey.mostPopular().then((item) => setVideo(item));
+    // const requestOptions = {
+    //   method: "GET",
+    //   redirect: "follow",
+    // };
+    // fetch(
+    //   "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&regionCode=KR&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA&key=AIzaSyCtO1ZI8FSJl8PLT4d9vxh55y9-tjhdTeA",
+    //   requestOptions
+    // )
+    //   .then((response) => response.json())
+    //   .then((result) => setVideo(result.items))
+    //   .catch((error) => console.log("error", error));
   }, []);
 
-  const inputValue = history.location.state;
+  const inputValue = history.location.state.inputValue;
 
   localStorage.setItem("id", JSON.stringify(inputValue));
   useEffect(() => {

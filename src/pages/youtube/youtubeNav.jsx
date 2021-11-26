@@ -6,7 +6,9 @@ import logo from "../../images/logo.png";
 const YoutubeNav = (props) => {
   let inputRef = useRef();
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    // console.log(e.currentTarget.value);
+    // props.search(e.currentTarget.value);
     const value = inputRef.current.value;
     props.search(value);
   };
@@ -31,7 +33,6 @@ const YoutubeNav = (props) => {
           placeholder="search"
           className="search"
           onKeyPress={handlePress}
-          // onChange={handleSearch}
         />
         <img
           className="searchImg"
