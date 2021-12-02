@@ -30,13 +30,7 @@ function App(props) {
                 <Route exact path="/intro" component={Intro}></Route>
                 <Route exact path="/game" component={Game}></Route>
                 <Route exact path="/todo" component={Todo}></Route>
-                <Route
-                  exact
-                  path="/youtube"
-                  component={() => <Youtube youtubeKey={youtubeKey} />}
-                  // component={Youtube}
-                  // test={test}
-                ></Route>
+                <Route exact path="/youtube" component={Youtube}></Route>
               </div>
             </div>
             <Footer />

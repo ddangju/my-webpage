@@ -3,19 +3,12 @@ import { useHistory } from "react-router-dom";
 import "../../styles/youtube.scss";
 
 const Youtube = (props) => {
-  console.log(props.youtubeKey.mostPopular(), "나유튜브");
-  // console.log(useLocation);
-  // const youtubeKey = props.youtubeKey;
   let [inputValue, setInputValue] = useState("");
   const test = useHistory();
   const handleChange = (e) => {
     setInputValue(e.currentTarget.value);
   };
-  // const saved = localStorage.getItem("todo");
-  // if (saved !== null) {
-  //   const parseTodo = JSON.parse(saved);
-  //   inputValue(parseTodo);
-  // }
+
   return (
     <div className="youtubeLogin">
       <div className="youtube-main-canvas">
@@ -35,8 +28,7 @@ const Youtube = (props) => {
             />
           </div>
           <div className="login">
-            {/* <form action="intropage/updownGame.html"> */}
-            <form>
+            <form className="formContainer">
               <p className="form_id">아이디</p>
               <input placeholder="ID" type="text" onChange={handleChange} />
               <p className="form_pw"> 비밀번호 </p>
@@ -49,8 +41,6 @@ const Youtube = (props) => {
                       pathname: "/youtubeMain",
                       state: {
                         inputValue: inputValue,
-                        // youtubeKey: youtubeKey,
-                        youtubeKey: props.youtubeKey,
                       },
                     })
                   }

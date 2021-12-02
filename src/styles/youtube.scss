@@ -1,9 +1,10 @@
 .youtubeLogin {
-  width: 30%;
-  background-color: red;
+  // width: 30%;
+  // background-color: red;
   // width: fit-content;
   // height: fit-content;
   .youtube-main-canvas {
+    margin-top: 10em;
     background: white;
     width: 29em;
     height: 22em;
@@ -26,7 +27,12 @@
     justify-content: flex-end;
   }
   .login {
-    margin: 100px;
+    // margin: 100px;
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
   .canvas-title {
     display: flex;
