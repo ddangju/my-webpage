@@ -1,8 +1,4 @@
 .youtubeLogin {
-  // width: 30%;
-  // background-color: red;
-  // width: fit-content;
-  // height: fit-content;
   .youtube-main-canvas {
     margin-top: 10em;
     background: white;
@@ -27,11 +23,36 @@
     justify-content: flex-end;
   }
   .login {
-    // margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
     .formContainer {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      margin-top: 2em;
+      .form_id,
+      .form_pw {
+        font-size: 1em;
+        font-weight: bolder;
+        margin-bottom: 0.5em;
+      }
+      .id_input,
+      .pw_input {
+        height: 2em;
+        border: 2px solid #c1b9b9;
+        margin-bottom: 0.5em;
+        border-radius: 5px;
+      }
+      .button {
+        .login_button {
+          width: 100%;
+          height: 2em;
+          margin-top: 1em;
+          font-size: 1em;
+          border: none;
+        }
+      }
     }
   }
   .canvas-title {

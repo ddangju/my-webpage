@@ -1,4 +1,5 @@
 import "./App.scss";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Intro from "./pages/intro/Intro";
@@ -8,12 +9,23 @@ import Youtube from "./pages/youtube/Youtube";
 import YoutubeMain from "./pages/youtube/youtubeMain";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import booting from "./images/booting.png";
 
 function App(props) {
   const youtubeKey = props.youtube;
-  // console.log(youtubeKey, "앱");
+
+  // const [bootingg, setBooting] = useState(true);
+  const abc = document.getElementsByClassName("bootingImg");
+
+  useEffect(() => {
+    // console.log(abc[0].className);
+    // setTimeout(() => {
+    //   abc[0].classList.add("hidden");
+    // }, 2500);
+  }, []);
   return (
     <div className="App">
+      {/* <img src={booting} alt="이미지" className="bootingImg" /> */}
       <Router>
         <Switch>
           <Route
