@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../../styles/youtube.scss";
 import logo from "../../images/logo.png";
+import close from "../../images/close.png";
+import minizewindow from "../../images/windowminimize.png";
 
 const Youtube = (props) => {
   let [inputValue, setInputValue] = useState("");
@@ -17,16 +19,11 @@ const Youtube = (props) => {
           <div className="youtube-canvas-top-icons">
             <img
               className="Minimizedwindow-icon"
-              src="image/windowminimize.png"
+              src={minizewindow}
               width="15"
               alt="사진"
             ></img>
-            <img
-              className="close-icon"
-              src="image/close.png"
-              width="25"
-              alt="사진"
-            />
+            <img className="close-icon" src={close} width="25" alt="사진" />
           </div>
           <div className="login">
             <img src={logo} alt="사진" />

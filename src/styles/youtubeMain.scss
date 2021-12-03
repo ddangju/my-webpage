@@ -1,0 +1,11 @@
+.detail_list_Container {
+  display: flex;
+  .detailContainer {
+    flex: 1 1 70%;
+    background-color: white;
+    padding: 50px;
+  }
+  .listContainer {
+    flex: 1 1 30%;
+  }
+}
