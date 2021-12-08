@@ -1,10 +1,13 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../styles/youtubeNav.scss";
+import { useHistory } from "react-router-dom";
 import search from "../../images/search.png";
 import logo from "../../images/logo.png";
 
 const YoutubeNav = (props) => {
   let inputRef = useRef();
+  const history = useHistory();
+  const [name, setName] = useState();
 
   const handleSearch = (e) => {
     // console.log(e.currentTarget.value);
@@ -21,9 +24,29 @@ const YoutubeNav = (props) => {
       handleSearch();
     }
   };
+  const goMain = () => {
+    history.push({
+      pathname: "/youtubeMain",
+      state: { inputValue: props.user },
+    });
+  };
+
+  const inputValue = props.user;
+
+  localStorage.setItem("id", JSON.stringify(inputValue));
+  useEffect(() => {
+    const saved = localStorage.getItem("id");
+    console.log(saved);
+    if (saved !== null) {
+      setName(saved);
+    }
+    if (saved === "") {
+      setName("사용자");
+    }
+  }, [inputValue]);
   return (
     <div className="navContainer_youtube">
-      <div className="logoContainer">
+      <div className="logoContainer" onClick={goMain}>
         <img src={logo} alt="logo"></img>
         <p className="logo_youtube">YouTube</p>
       </div>
@@ -42,7 +65,7 @@ const YoutubeNav = (props) => {
         />
       </div>
 
-      <p className="userName">{props.name}님, 안녕하세요!</p>
+      <p className="userName">{name}님, 안녕하세요!</p>
     </div>
   );
 };

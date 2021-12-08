@@ -2,8 +2,9 @@ import React from "react";
 import VideoItem from "../youtube/videoItem";
 import "../../styles/videoList.scss";
 const VideoList = (props) => {
+  const displayType = props.withPlayer === "on" ? "on" : null;
   return (
-    <ul className="videos">
+    <ul className={`videos ${displayType}`}>
       {props.video.map((item) => (
         <VideoItem
           key={item.id}

@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "../../styles/youtubeMain.scss";
 import VideoList from "../youtube/videoList";
-import Nav from "../youtube/youtubeNav";
+import YoutubeNav from "../youtube/youtubeNav";
 import YoutubeDetail from "./youtubeDetail";
 
 const YoutubeMain = (props) => {
   const [video, setVideo] = useState([]);
-  const [name, setName] = useState();
   const history = useHistory();
   const youtubeKey = props.youtubeKey;
+  const [user, setUser] = useState("");
   const [selected, setSelected] = useState(null);
   // console.log(youtubeKey, "나유튜브메인");
 
@@ -18,10 +18,10 @@ const YoutubeMain = (props) => {
   // const goDetail = () => {
   //   console.log("Gd");
   // };
-
+  // console.log(selected, "gd");
   const selectVideo = (video) => {
-    console.log(video);
     setSelected(video);
+    // console.log(video, selected);
   };
 
   const search = (query) => {
@@ -32,25 +32,32 @@ const YoutubeMain = (props) => {
     youtubeKey.mostPopular().then((item) => setVideo(item));
   }, [youtubeKey]);
 
-  const inputValue = history.location.state.inputValue;
-
-  localStorage.setItem("id", JSON.stringify(inputValue));
   useEffect(() => {
-    const saved = localStorage.getItem("id");
-    if (saved !== null) {
-      setName(saved);
+    if (selected) {
+      history.push({
+        pathname: "/youtubeDetail",
+        state: { selected: selected, video: video, user: user },
+      });
     }
-  }, [inputValue]);
+  }, [history, selected]);
+
+  useEffect(() => {
+    if (localStorage.getItem("id") !== null) {
+      setUser(history?.location?.state?.inputValue);
+    } else if (localStorage.getItem("id") === "") {
+      setUser("사용자");
+    }
+  }, [history?.location?.state?.inputValue]);
 
   return (
     <div>
-      <Nav search={search} name={name}></Nav>
+      <YoutubeNav search={search} user={user}></YoutubeNav>
       <section className="detail_list_Container">
-        {selected && (
+        {/* {selected && (
           <div className="detailContainer">
             <YoutubeDetail video={selected} />
           </div>
-        )}
+        )} */}
         <div className="listContainer">
           <VideoList
             video={video}

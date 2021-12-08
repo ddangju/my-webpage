@@ -1,6 +1,10 @@
 .videos {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   padding: 50px;
   background-color: #ebebeb;
+}
+.on {
+  width: 30%;
 }

@@ -7,6 +7,7 @@ import Game from "./pages/game/Game";
 import Todo from "./pages/todo/Todo";
 import Youtube from "./pages/youtube/Youtube";
 import YoutubeMain from "./pages/youtube/youtubeMain";
+import YoutubeDetail from "./pages/youtube/youtubeDetail";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import booting from "./images/booting.png";
@@ -33,6 +34,7 @@ function App(props) {
             path="/youtubeMain"
             component={() => <YoutubeMain youtubeKey={youtubeKey} />}
           ></Route>
+          <Route exact path="/youtubeDetail" component={YoutubeDetail}></Route>
           <>
             <div className="container">
               {/* <div className="navContainer"></div> */}

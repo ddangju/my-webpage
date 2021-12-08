@@ -1,0 +1,20 @@
+.detail {
+  .detailContainer {
+    display: flex;
+    justify-content: center;
+    .detailVideoContainer {
+      width: 70%;
+      background-color: white;
+      padding: 50px;
+      iframeContainer {
+        .ytp-cued-thumbnail-overlay-image {
+          background-size: contain;
+        }
+      }
+
+      pre {
+        white-space: pre-wrap;
+      }
+    }
+  }
+}
