@@ -10,14 +10,33 @@ const YoutubeDetail = (props) => {
   const state = history.location.state;
   const video = state.video;
   const [selected, setSelected] = useState(state.selected);
+  const [search, setSearch] = useState();
 
-  console.log(history.location.state);
   const onVideoClick = (video) => {
     setSelected(video);
   };
+
+  const onSearch = (a) => {
+    props.youtubeKey.search(a).then((item) => setSearch(item));
+  };
+
+  useEffect(() => {
+    if (search) {
+      history.push({
+        pathname: "/youtubeMain",
+        state: {
+          youtubeKey: search,
+        },
+      });
+    }
+  }, [history, search]);
+
   return (
     <section className="detail">
-      <YoutubeNav user={history.location.state.user}></YoutubeNav>
+      <YoutubeNav
+        search={onSearch}
+        user={history.location.state.user}
+      ></YoutubeNav>
       <div className="detailContainer">
         <div className="detailVideoContainer">
           <iframe

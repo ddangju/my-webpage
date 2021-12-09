@@ -34,7 +34,11 @@ function App(props) {
             path="/youtubeMain"
             component={() => <YoutubeMain youtubeKey={youtubeKey} />}
           ></Route>
-          <Route exact path="/youtubeDetail" component={YoutubeDetail}></Route>
+          <Route
+            exact
+            path="/youtubeDetail"
+            component={() => <YoutubeDetail youtubeKey={youtubeKey} />}
+          ></Route>
           <>
             <div className="container">
               {/* <div className="navContainer"></div> */}

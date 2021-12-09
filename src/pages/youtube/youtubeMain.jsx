@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import "../../styles/youtubeMain.scss";
 import VideoList from "../youtube/videoList";
 import YoutubeNav from "../youtube/youtubeNav";
-import YoutubeDetail from "./youtubeDetail";
 
 const YoutubeMain = (props) => {
   const [video, setVideo] = useState([]);
@@ -11,17 +10,9 @@ const YoutubeMain = (props) => {
   const youtubeKey = props.youtubeKey;
   const [user, setUser] = useState("");
   const [selected, setSelected] = useState(null);
-  // console.log(youtubeKey, "나유튜브메인");
-
-  // const youtube = new Youtube();
-
-  // const goDetail = () => {
-  //   console.log("Gd");
-  // };
-  // console.log(selected, "gd");
+  ///비디오 선택
   const selectVideo = (video) => {
     setSelected(video);
-    // console.log(video, selected);
   };
 
   const search = (query) => {
@@ -29,23 +20,32 @@ const YoutubeMain = (props) => {
   };
 
   useEffect(() => {
-    youtubeKey.mostPopular().then((item) => setVideo(item));
-  }, [youtubeKey]);
+    if (!history.location.state.youtubeKey) {
+      youtubeKey.mostPopular().then((item) => setVideo(item));
+    } else {
+      setVideo(history.location.state.youtubeKey);
+    }
+  }, [history.location.state.youtubeKey, youtubeKey]);
 
+  ///영상을 클릭할 때 실행
   useEffect(() => {
     if (selected) {
       history.push({
         pathname: "/youtubeDetail",
-        state: { selected: selected, video: video, user: user },
+        state: {
+          selected: selected,
+          video: video,
+          user: user,
+          youtubeKey: youtubeKey,
+        },
       });
     }
-  }, [history, selected]);
+  }, [history, selected, user, video, youtubeKey]);
 
+  ///사용자id가 넘어오면서 실행
   useEffect(() => {
     if (localStorage.getItem("id") !== null) {
       setUser(history?.location?.state?.inputValue);
-    } else if (localStorage.getItem("id") === "") {
-      setUser("사용자");
     }
   }, [history?.location?.state?.inputValue]);
 
