@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import "../../styles/youtubeDetail.scss";
+import "../../styles/youtube/youtubeDetail.scss";
 import VideoList from "../youtube/videoList";
 import YoutubeNav from "../youtube/youtubeNav";
-import "../../styles/youtubeDetail.scss";
 
 const YoutubeDetail = (props) => {
   const history = useHistory();

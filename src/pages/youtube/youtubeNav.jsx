@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../../styles/youtubeNav.scss";
+import "../../styles/youtube/youtubeNav.scss";
 import { useHistory } from "react-router-dom";
 import search from "../../images/search.png";
 import logo from "../../images/logo.png";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import "../../styles/youtubeMain.scss";
+import "../../styles/youtube/youtubeMain.scss";
 import VideoList from "../youtube/videoList";
 import YoutubeNav from "../youtube/youtubeNav";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "../../styles/youtube.scss";
+import "../../styles/youtube/youtube.scss";
 import logo from "../../images/logo.png";
 import close from "../../images/close.png";
 import minizewindow from "../../images/windowminimize.png";
@@ -12,7 +12,7 @@ const Youtube = (props) => {
     setInputValue(e.currentTarget.value);
   };
   return (
-    <div className="youtubeLogin">
+    <div className="animate__animated animate__zoomIn youtubeLogin">
       <div className="youtube-main-canvas">
         <div className="youtube-canvas-top">
           <div className="youtube-canvas-top-icons">

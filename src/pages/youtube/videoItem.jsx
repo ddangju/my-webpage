@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/youtubeItem.scss";
+import "../../styles/youtube/youtubeItem.scss";
 
 const VideoItem = (props) => {
   // console.log(props.onVideoClick

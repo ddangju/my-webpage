@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/nav.scss";
 import photo1 from "../images/001.png";
-import photo2 from "../images/002.png";
+import photo3 from "../images/003.png";
 import photo4 from "../images/004.png";
 import photo6 from "../images/006.png";
 
@@ -18,7 +18,7 @@ const Nav = () => {
         </Link>
         <Link to="/game">
           <div className="imgElement">
-            <img src={photo2} alt="사진" />
+            <img src={photo3} alt="사진" />
             <p>Game</p>
           </div>
         </Link>

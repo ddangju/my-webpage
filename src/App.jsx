@@ -1,5 +1,6 @@
 import "./App.scss";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Intro from "./pages/intro/Intro";
@@ -15,15 +16,20 @@ import booting from "./images/booting.png";
 function App(props) {
   const youtubeKey = props.youtube;
 
-  // const [bootingg, setBooting] = useState(true);
-  const abc = document.getElementsByClassName("bootingImg");
+  const startBooting = document.getElementsByClassName("bootingImg");
 
-  useEffect(() => {
-    // console.log(abc[0].className);
-    // setTimeout(() => {
-    //   abc[0].classList.add("hidden");
-    // }, 2500);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     startBooting[0].classList.add("hidden");
+  //   }, 2500);
+  // }, [startBooting]);
+
+  // console.log(performance.navigation.type);
+  // useEffect(() => {
+  //   if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  //     window.location.href = "/";
+  //   }
+  // }, []);
   return (
     <div className="App">
       {/* <img src={booting} alt="이미지" className="bootingImg" /> */}
@@ -41,11 +47,12 @@ function App(props) {
           ></Route>
           <>
             <div className="container">
-              {/* <div className="navContainer"></div> */}
               <Nav></Nav>
               <div className="main">
                 <Route exact path="/" component={Main}></Route>
-                <Route exact path="/intro" component={Intro}></Route>
+                <Route path="/intro">
+                  <Intro />
+                </Route>
                 <Route exact path="/game" component={Game}></Route>
                 <Route exact path="/todo" component={Todo}></Route>
                 <Route exact path="/youtube" component={Youtube}></Route>

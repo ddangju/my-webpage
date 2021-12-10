@@ -1,6 +1,6 @@
 import React from "react";
 import VideoItem from "../youtube/videoItem";
-import "../../styles/videoList.scss";
+import "../../styles/youtube/videoList.scss";
 const VideoList = (props) => {
   const displayType = props.withPlayer === "on" ? "on" : null;
   return (
