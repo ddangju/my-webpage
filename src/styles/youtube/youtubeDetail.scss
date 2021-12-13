@@ -18,3 +18,14 @@
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .detail {
+    .detailContainer {
+      display: flex;
+      flex-direction: column;
+      .detailVideoContainer {
+        width: 100%;
+      }
+    }
+  }
+}

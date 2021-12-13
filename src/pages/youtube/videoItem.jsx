@@ -4,6 +4,7 @@ import "../../styles/youtube/youtubeItem.scss";
 const VideoItem = (props) => {
   // console.log(props.onVideoClick
   const displayType = props.display === "list" ? "list" : "grid";
+  console.log("아이템");
   return (
     <li
       className={`videoContainer ${displayType}`}

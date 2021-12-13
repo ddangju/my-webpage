@@ -8,3 +8,9 @@
 .on {
   width: 30%;
 }
+
+@media screen and (max-width: 1000px) {
+  .on {
+    width: 100%;
+  }
+}
