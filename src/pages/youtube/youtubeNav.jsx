@@ -5,7 +5,6 @@ import search from "../../images/search.png";
 import logo from "../../images/logo.png";
 
 const YoutubeNav = memo((props) => {
-  console.log("nav");
   let inputRef = useRef();
   const history = useHistory();
   const [name, setName] = useState();
