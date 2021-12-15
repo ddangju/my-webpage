@@ -16,12 +16,7 @@ const Nav = () => {
             <p>Introduce</p>
           </div>
         </Link>
-        <Link to="/game">
-          <div className="imgElement">
-            <img src={photo3} alt="사진" />
-            <p>Game</p>
-          </div>
-        </Link>
+
         <Link to="/todo">
           <div className="imgElement">
             <img src={photo6} alt="사진" />
@@ -32,6 +27,12 @@ const Nav = () => {
           <div className="imgElement">
             <img src={photo4} alt="사진" />
             <p>Youtube</p>
+          </div>
+        </Link>
+        <Link to="/game">
+          <div className="imgElement">
+            <img src={photo3} alt="사진" />
+            <p>Visitor</p>
           </div>
         </Link>
       </div>

@@ -1,7 +1,6 @@
 .bottom_section {
-  position: fixed;
-  bottom: 0px;
   width: 100%;
+  height: 3%;
 }
 
 .bottom_top {
@@ -11,38 +10,32 @@
 
 .bottom {
   display: flex;
-  height: 35px;
+  height: 100%;
   width: 100%;
   background-color: rgb(183, 185, 185);
-  padding-top: 5px;
 }
 
 .bottom-inner {
   display: flex;
-  width: 105px;
-  padding: 2px;
-  margin: -1px 0px 5px 3px;
-  padding-top: 2px;
+  width: 6.5%;
+  padding: 10px;
   border-style: solid;
   border-color: aliceblue black black aliceblue;
   border-width: 1.5px;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-inner-image {
-  margin-right: 5px;
-  margin-left: 5px;
-  text-align: start;
-  width: 100%;
+  width: 30%;
 }
 
 .windowImg {
-  margin-left: 5px;
-  margin-right: 15px;
-  width: 40%;
-  height: 100%;
+  width: 30%;
 }
 
 .bottom-inner-start {
   font-weight: 900;
+  margin-left: 5%;
 }

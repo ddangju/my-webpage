@@ -5,7 +5,6 @@ import bottomPhoto from "../images/badge.png";
 const Footer = () => {
   return (
     <div className="bottom_section">
-      <div className="bottom-top" width="100" height="20"></div>
       <div className="bottom">
         <div className="bottom-inner">
           <img src={bottomPhoto} alt="사진" className="windowImg" />
