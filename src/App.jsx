@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Intro from "./pages/intro/Intro";
-import Game from "./pages/game/Game";
+import Visitor from "./pages/visitor/visitor";
 import Todo from "./pages/todo/Todo";
 import Youtube from "./pages/youtube/Youtube";
 import YoutubeMain from "./pages/youtube/youtubeMain";
@@ -49,13 +49,21 @@ function App(props) {
             <div className="container">
               <Nav></Nav>
               <div className="main">
-                <Route exact path="/" component={Main}></Route>
+                <Route exact path="/">
+                  <Main />
+                </Route>
                 <Route path="/intro">
                   <Intro />
                 </Route>
-                <Route exact path="/game" component={Game}></Route>
-                <Route exact path="/todo" component={Todo}></Route>
-                <Route exact path="/youtube" component={Youtube}></Route>
+                <Route path="/visitor">
+                  <Visitor />
+                </Route>
+                <Route exact path="/todo">
+                  <Todo />
+                </Route>
+                <Route exact path="/youtube">
+                  <Youtube />
+                </Route>
               </div>
             </div>
             <Footer />

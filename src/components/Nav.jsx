@@ -29,7 +29,7 @@ const Nav = () => {
             <p>Youtube</p>
           </div>
         </Link>
-        <Link to="/game">
+        <Link to="/visitor">
           <div className="imgElement">
             <img src={photo3} alt="사진" />
             <p>Visitor</p>

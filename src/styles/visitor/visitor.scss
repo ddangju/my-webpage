@@ -1,0 +1,23 @@
+@import "../common/common.scss";
+.todoContainer {
+  .todo-main-canvas {
+    .todo-canvas-top {
+      .todo-canvas-top-icons {
+        .intro-Minimizedwindow-icon {
+        }
+        .intro-close-icon {
+        }
+      }
+    }
+    .visitor_login_container {
+      width: 100%;
+      height: 100%;
+      p {
+        background-color: $markerRed;
+      }
+      .googleImg {
+        width: 30%;
+      }
+    }
+  }
+}
