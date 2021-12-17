@@ -1,7 +1,10 @@
 @import "../common/common.scss";
 .todoContainer {
   .todo-main-canvas {
+    border-radius: 1.5%;
+    border-width: 4px;
     .todo-canvas-top {
+      border-radius: 5px 5px 0px 0px;
       .todo-canvas-top-icons {
         .intro-Minimizedwindow-icon {
         }

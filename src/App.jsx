@@ -30,6 +30,7 @@ function App(props) {
   //     window.location.href = "/";
   //   }
   // }, []);
+  console.log(props.authService, "app");
   return (
     <div className="App">
       {/* <img src={booting} alt="이미지" className="bootingImg" /> */}
@@ -56,7 +57,7 @@ function App(props) {
                   <Intro />
                 </Route>
                 <Route path="/visitor">
-                  <Visitor />
+                  <Visitor authService={props.authService} />
                 </Route>
                 <Route exact path="/todo">
                   <Todo />

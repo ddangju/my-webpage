@@ -6,8 +6,9 @@ import { Route, Switch } from "react-router";
 import VisitorLogin from "./visitorLogin";
 import VisitorList from "./visitorList";
 
-const Visitor = () => {
-  const handleLogin = () => {};
+const Visitor = (props) => {
+  // console.log(props.authService, "visitor");
+
   return (
     <div className="animate__animated animate__zoomIn todoContainer">
       <div className="todo-main-canvas">
@@ -29,7 +30,7 @@ const Visitor = () => {
         </div>
         <Switch>
           <Route exact path="/visitor">
-            <VisitorLogin />
+            <VisitorLogin authService={props.authService} />
           </Route>
           <Route path="/visitor/list">
             <VisitorList />
