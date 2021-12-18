@@ -5,10 +5,11 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 class AuthService {
-  login(providerName) {
+  login(providerName, Login) {
     let provider;
     if (providerName === "Google") {
       provider = new GoogleAuthProvider();
@@ -17,15 +18,24 @@ class AuthService {
     }
 
     const auth = getAuth(firebaseApp);
-    console.log(auth);
+    // console.log(auth);
 
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
+        console.log(result.user.uid);
+        Login(result.user.uid);
       })
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  onAuthChange(change) {
+    const auth = getAuth(firebaseApp);
+    onAuthStateChanged(auth, (사용자정보) => {
+      change(사용자정보);
+      // 사용자가바뀔때실행(사용자정보);
+    });
   }
 }
 
