@@ -3,7 +3,7 @@
   animation-duration: 300ms;
   .intro-main-canvas {
     border-radius: 1.5%;
-    background: white;
+    background-color: #ffefef;
     width: 60em;
     height: 47em;
     border-style: solid;
@@ -15,7 +15,7 @@
       border-radius: 5px 5px 0px 0px;
       width: 100%;
       height: 5%;
-      background-color: #2149cc;
+      background-color: #c9c9c9;
       margin: 0;
       .intro-canvas-top-icons {
         display: flex;
@@ -109,6 +109,8 @@
         font-weight: bolder;
         font-size: 5em;
         cursor: pointer;
+        text-shadow: 5px 5px 2px #f8b5b5;
+        color: #24314e;
       }
       .clickHeader:hover {
         --animation: bounce;

@@ -1,5 +1,8 @@
 .detail_list_Container {
   display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   .detailContainer {
     flex: 1 1 70%;
     background-color: rgb(245, 184, 184);
@@ -8,6 +11,6 @@
     }
   }
   .listContainer {
-    flex: 1 1 30%;
+    width: 80%;
   }
 }

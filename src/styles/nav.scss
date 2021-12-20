@@ -8,20 +8,27 @@
   .imgContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 50%;
+    padding-top: 50%;
+    height: 100%;
 
-    .imgElement {
-      margin-bottom: 50px;
-      cursor: pointer;
-      transition: all 0.3s;
-      transition: transform 200ms ease-in;
+    .linkImg2 {
+      height: 18%;
+      width: 100%;
+      .imgElement {
+        margin-bottom: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+        transition: transform 200ms ease-in;
+        .img {
+        }
 
-      p {
-        font-size: 16px;
-        color: rgb(255, 255, 255);
-        font-style: inherit;
-        text-shadow: 5px 3px 3px #000000;
-        text-align: center;
+        p {
+          font-size: 16px;
+          color: rgb(255, 255, 255);
+          font-style: inherit;
+          text-shadow: 5px 3px 3px #000000;
+          text-align: center;
+        }
       }
     }
   }

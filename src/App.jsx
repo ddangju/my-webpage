@@ -30,7 +30,7 @@ function App(props) {
   //     window.location.href = "/";
   //   }
   // }, []);
-  console.log(props.authService, "app");
+  // console.log(props.authService, "app");
   return (
     <div className="App">
       {/* <img src={booting} alt="이미지" className="bootingImg" /> */}

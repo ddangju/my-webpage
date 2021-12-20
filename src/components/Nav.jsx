@@ -10,26 +10,26 @@ const Nav = () => {
   return (
     <div className="navContainer">
       <div className="imgContainer">
-        <Link to="/intro">
+        <Link to="/intro" className="linkImg2">
           <div className="imgElement">
             <img className="img" src={photo1} alt="사진" />
             <p>Introduce</p>
           </div>
         </Link>
 
-        <Link to="/todo">
+        <Link to="/todo" className="linkImg2">
           <div className="imgElement">
             <img src={photo6} alt="사진" />
             <p>TotoList</p>
           </div>
         </Link>
-        <Link to="/youtube">
+        <Link to="/youtube" className="linkImg2">
           <div className="imgElement">
             <img src={photo4} alt="사진" />
             <p>Youtube</p>
           </div>
         </Link>
-        <Link to="/visitor">
+        <Link to="/visitor" className="linkImg2">
           <div className="imgElement">
             <img src={photo3} alt="사진" />
             <p>Visitor</p>
