@@ -48,8 +48,8 @@ const VisitorLogin = (props) => {
   return (
     <div className="visitor_login_container">
       <img src={computer} alt="computer" className="computerImg" />
-      <div class="visitor_btn_container">
-        <div class="google_container">
+      <div className="visitor_btn_container">
+        <div className="google_container">
           <img
             src={google}
             alt="google"
@@ -58,7 +58,7 @@ const VisitorLogin = (props) => {
           />
           <p className="googleLogin">Google 로그인</p>
         </div>
-        <div class="github_container">
+        <div className="github_container">
           <img
             src={githubImg}
             alt="githubImg"
@@ -66,6 +66,15 @@ const VisitorLogin = (props) => {
             onClick={handleLogin}
           />
           <p className="githubLogin">github 로그인</p>
+        </div>
+        <div className="facebook_container">
+          <img
+            src={githubImg}
+            alt="githubImg"
+            className="Facebook"
+            onClick={handleLogin}
+          />
+          <p className="githubLogin">Facebook 로그인</p>
         </div>
       </div>
       {/* <button onClick={() => console.log(loginInfo)}>버튼</button> */}

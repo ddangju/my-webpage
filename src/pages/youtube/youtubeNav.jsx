@@ -23,7 +23,7 @@ const YoutubeNav = memo((props) => {
     }
   };
   const goMain = () => {
-    console.log("gomain");
+    // console.log("gomain");
     history.push({
       pathname: "/youtubeMain",
       state: { inputValue: props.user },
@@ -34,7 +34,7 @@ const YoutubeNav = memo((props) => {
 
   localStorage.setItem("id", JSON.stringify(inputValue));
   useEffect(() => {
-    console.log("nav>>>로컬", [inputValue]);
+    // console.log("nav>>>로컬", [inputValue]);
     const saved = localStorage.getItem("id");
     if (saved !== null) {
       setName(saved);

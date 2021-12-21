@@ -6,18 +6,18 @@ import { useHistory } from "react-router-dom";
 const IntroMain = () => {
   const history = useHistory();
   const mouseover = (e) => {
-    console.log(e.target.classList);
     if (e.target) {
-      e.target.classList.add(
+      e.currentTarget.classList.add(
         "animate__animated",
         "animate__bounce",
         "animate__infinite",
         "animate__fast"
       );
     }
+    console.log(e.target.classList);
   };
   const mouseLeave = (e) => {
-    e.target.classList.remove(
+    e.currentTarget.classList.remove(
       "animate__animated",
       "animate__bounce",
       "animate__infinite",
@@ -30,8 +30,7 @@ const IntroMain = () => {
   };
 
   return (
-    <div>
-      <img src={back} alt="back" className="backImg" />
+    <div className="test">
       <div className="selfieContainer">
         <img src={selfie} alt="selfie" className="selfie" />
         <div
@@ -43,6 +42,7 @@ const IntroMain = () => {
           Click me !
         </div>
       </div>
+      <img src={back} alt="back" className="backImg" />
     </div>
   );
 };

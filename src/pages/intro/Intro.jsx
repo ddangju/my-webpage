@@ -8,34 +8,32 @@ import Read from "./read";
 
 const Intro = () => {
   return (
-    <div>
-      <div className="animate__animated animate__zoomIn introContainer">
-        <div className="intro-main-canvas">
-          <div className="intro-canvas-top">
-            <div className="intro-canvas-top-icons">
-              <img
-                className="intro-Minimizedwindow-icon"
-                src={minizewindow}
-                width="15"
-                alt="사진"
-              ></img>
-              <img
-                className="intro-close-icon"
-                src={close}
-                width="25"
-                alt="사진"
-              />
-            </div>
-            <Switch>
-              <Route exact path="/intro">
-                <IntroMain />
-              </Route>
-              <Route path="/intro/read">
-                <Read />
-              </Route>
-            </Switch>
+    <div className="animate__animated animate__zoomIn introContainer">
+      <div className="intro-main-canvas">
+        <div className="intro-canvas-top">
+          <div className="intro-canvas-top-icons">
+            <img
+              className="intro-Minimizedwindow-icon"
+              src={minizewindow}
+              width="15"
+              alt="사진"
+            ></img>
+            <img
+              className="intro-close-icon"
+              src={close}
+              width="25"
+              alt="사진"
+            />
           </div>
         </div>
+        <Switch>
+          <Route exact path="/intro">
+            <IntroMain />
+          </Route>
+          <Route path="/intro/read">
+            <Read />
+          </Route>
+        </Switch>
       </div>
     </div>
   );

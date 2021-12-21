@@ -3,7 +3,9 @@ import VideoItem from "../youtube/videoItem";
 import "../../styles/youtube/videoList.scss";
 const VideoList = (props) => {
   const displayType = props.withPlayer === "on" ? "on" : null;
-  console.log("list");
+  // console.log("list");
+  // console.log(props.video, ">>>>>>>>>>>>>>>>>>>>>>>>>>");
+
   return (
     <ul className={`videos ${displayType}`}>
       {props.video.map((item) => (

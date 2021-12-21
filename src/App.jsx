@@ -36,16 +36,12 @@ function App(props) {
       {/* <img src={booting} alt="이미지" className="bootingImg" /> */}
       <Router>
         <Switch>
-          <Route
-            exact
-            path="/youtubeMain"
-            component={() => <YoutubeMain youtubeKey={youtubeKey} />}
-          ></Route>
-          <Route
-            exact
-            path="/youtubeDetail"
-            component={() => <YoutubeDetail youtubeKey={youtubeKey} />}
-          ></Route>
+          <Route exact path="/youtubeMain">
+            <YoutubeMain youtubeKey={youtubeKey} />
+          </Route>
+          <Route exact path="/youtubeDetail">
+            <YoutubeDetail youtubeKey={youtubeKey} />
+          </Route>
           <>
             <div className="container">
               <Nav></Nav>

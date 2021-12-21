@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
   onAuthStateChanged,
+  FacebookAuthProvider,
 } from "firebase/auth";
 
 class AuthService {
@@ -15,6 +16,8 @@ class AuthService {
       provider = new GoogleAuthProvider();
     } else if (textContent === "Github") {
       provider = new GithubAuthProvider();
+    } else if (textContent === "Facebook") {
+      provider = new FacebookAuthProvider();
     }
 
     const auth = getAuth(firebaseApp);

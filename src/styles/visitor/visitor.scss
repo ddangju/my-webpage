@@ -41,10 +41,7 @@
       justify-content: center;
       align-items: center;
       border-style: solid;
-      // border: 2px solid #cccccc;
-      border-width: 1px 4px 4px 4px;
-      // border-width: 4px;
-      // border-color: #cccccc;
+      border-width: 1px 4px 4px 3px;
       border-color: #c1b5b5;
       width: 100%;
       height: 94%;
@@ -58,6 +55,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        border: 3px solid #f2d1d1;
+        border-radius: 10px;
         .computerImg {
           height: 60%;
           width: 70%;
@@ -71,20 +70,42 @@
           display: flex;
           .google_container {
             width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5%;
             .Google {
-              // width: 10%;
-              width: 100%;
+              height: 100%;
+              margin-bottom: 5%;
+              cursor: pointer;
             }
             .googleLogin {
+              font-size: 1.1rem;
+              font-weight: bolder;
+              border: 2.5px solid #c4cdff;
+              padding: 5%;
+              border-radius: 15px;
             }
           }
           .github_container {
             width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5%;
             .Github {
-              width: 100%;
-              // width: 20%;
+              height: 100%;
+              margin-bottom: 5%;
+              cursor: pointer;
             }
             .githubLogin {
+              font-size: 1.1rem;
+              font-weight: bolder;
+              border: 2.5px solid #c4cdff;
+              padding: 5%;
+              border-radius: 15px;
             }
           }
         }

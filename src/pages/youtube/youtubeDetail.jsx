@@ -9,7 +9,7 @@ const YoutubeDetail = (props) => {
   const state = history.location.state;
   const video = state.video;
   const [selected, setSelected] = useState(state.selected);
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState(null);
 
   const onVideoClick = (video) => {
     setSelected(video);
@@ -24,7 +24,7 @@ const YoutubeDetail = (props) => {
       history.push({
         pathname: "/youtubeMain",
         state: {
-          youtubeKey: search,
+          searchList: search,
         },
       });
     }

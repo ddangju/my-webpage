@@ -1,119 +1,197 @@
 .introContainer {
-  margin-top: 5em;
+  overflow-y: hidden;
+  width: 100%;
+  height: 97%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
   animation-duration: 300ms;
   .intro-main-canvas {
-    border-radius: 1.5%;
+    width: 65%;
+    height: 90%;
+    border-radius: 5px;
     background-color: #ffefef;
-    width: 60em;
-    height: 47em;
     border-style: solid;
-    border-width: 4px;
-    border-color: rgba(240, 248, 255, 0.918) black black
+    border-width: 5px;
+    border-color: rgba(240, 248, 255, 0.918) rgb(73, 73, 73) rgb(83, 83, 83)
       rgba(240, 248, 255, 0.918);
-    transform: scale(1.06);
     .intro-canvas-top {
       border-radius: 5px 5px 0px 0px;
       width: 100%;
       height: 5%;
       background-color: #c9c9c9;
-      margin: 0;
+      border: 3px solid #c1b5b5;
+      border-bottom: none;
       .intro-canvas-top-icons {
         display: flex;
         justify-content: flex-end;
+        height: 100%;
+        align-items: center;
+        padding-right: 1%;
+        width: 100%;
         .intro-Minimizedwindow-icon {
-          padding-bottom: 5px;
-          margin-right: 5px;
           cursor: pointer;
+          height: 70%;
+          margin-right: 0.5%;
+          width: 2%;
+          padding-bottom: 0.5%;
         }
         .intro-close-icon {
           cursor: pointer;
+          height: 70%;
         }
       }
-      .readContainer {
-        background-color: rgb(255, 255, 255);
+    }
+    .readContainer {
+      width: 100%;
+      height: 95%;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      .selfie_container {
+        background-color: #fefdf3;
+        width: 35%;
+        height: 100%;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         .selfie2Img {
-          width: 30%;
-          height: 30%;
-          margin-top: 10em;
-          margin-left: 2em;
+          width: 80%;
+          height: 40%;
         }
-        margin-top: 0.5em;
-        .ContextContainer {
-          margin: 4em;
-          margin: 1em 3em 0em 3em;
-          .contextHeader {
-            font-weight: bolder;
-            font-size: 1.3em;
-          }
-          .birthContainer,
-          .ageContainer,
-          .jobContainer,
-          .phoneContainer,
-          .nickNameContainer,
-          .mbtiContainer {
+        .selfie_btn_container {
+          width: 80%;
+          height: 20%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          .heartContainer {
             display: flex;
-            margin-top: 0.8em;
-            .birth,
-            .age,
-            .job,
-            .phone,
-            .nickName,
-            .mbti,
-            .favorite,
-            .dislike,
-            .introduce,
-            .motto,
-            .introduceContext {
-              font-size: 1em;
-              font-weight: bolder;
+            flex-direction: column;
+            align-items: center;
+            height: 50%;
+            .selfie_heart {
+              font-size: 60px;
+              cursor: pointer;
+            }
+            .heart_color {
+              color: red;
+              --animation: bounce;
+              animation-duration: 700ms;
+            }
+            .heart_count {
+              font-size: 1.1rem;
+              font-weight: 600;
             }
           }
+          // .selfie_heart::before {
+          //   content: "\f004";
+          //   color: red;
+          //   width: 25%;
+          //   font-size: 60px;
+          // }
+
+          .selfieGithub,
+          .selfievelogImg {
+            width: 25%;
+            height: 50%;
+            cursor: pointer;
+          }
+        }
+      }
+      .ContextContainer {
+        width: 65%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .contextHeader {
+          font-weight: bolder;
+          font-size: 1.3em;
+        }
+        .birthContainer,
+        .ageContainer,
+        .jobContainer,
+        .phoneContainer,
+        .nickNameContainer,
+        .mbtiContainer {
+          display: flex;
+          margin-top: 0.8em;
+          .birth,
+          .age,
+          .job,
+          .phone,
+          .nickName,
+          .mbti,
           .favorite,
           .dislike,
           .introduce,
-          .motto {
+          .motto,
+          .introduceContext {
             font-size: 1em;
             font-weight: bolder;
-            margin-top: 0.8em;
-            margin-bottom: 0.8em;
           }
-          .text2 {
+        }
+        .favorite,
+        .dislike,
+        .introduce,
+        .motto {
+          font-size: 1em;
+          font-weight: bolder;
+          margin-top: 0.8em;
+          margin-bottom: 0.8em;
+        }
+        .text2 {
+          margin-left: 1em;
+        }
+        .introduceContext {
+          .text {
+            margin-bottom: 0.5em;
             margin-left: 1em;
-          }
-          .introduceContext {
-            .text {
-              margin-bottom: 0.5em;
-              margin-left: 1em;
-            }
           }
         }
       }
     }
+
     ///introMain
-    .backImg {
+    .test {
       width: 100%;
-      z-index: -1;
-      position: fixed;
-    }
-    .selfieContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 4em;
-      .selfie {
-        margin: 5em 0em 2em 0em;
-        width: 35%;
+      height: 94.5%;
+      position: relative;
+      border-width: 1px 4px 4px 3px;
+      border-color: #c1b5b5;
+      border-style: solid;
+      border-radius: 0 0 1% 1%;
+      .backImg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
       }
-      .clickHeader {
-        font-weight: bolder;
-        font-size: 5em;
-        cursor: pointer;
-        text-shadow: 5px 5px 2px #f8b5b5;
-        color: #24314e;
-      }
-      .clickHeader:hover {
-        --animation: bounce;
+      .selfieContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        .selfie {
+          width: 40%;
+        }
+        .clickHeader {
+          font-weight: bolder;
+          font-size: 5em;
+          cursor: pointer;
+          text-shadow: 5px 5px 2px #c77d7d;
+          color: #24314e;
+          padding-top: 3%;
+        }
+        .clickHeader:hover {
+          --animation: bounce;
+        }
       }
     }
   }
