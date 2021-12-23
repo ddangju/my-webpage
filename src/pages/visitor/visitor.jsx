@@ -2,7 +2,7 @@ import React from "react";
 import close from "../../images/close.png";
 import minizewindow from "../../images/windowminimize.png";
 import "../../styles/visitor/visitor.scss";
-import { Route, Switch } from "react-router";
+import { Route, Switch } from "react-router-dom";
 import VisitorLogin from "./visitorLogin";
 import VisitorList from "./visitorList";
 
@@ -34,7 +34,10 @@ const Visitor = (props) => {
               <VisitorLogin authService={props.authService} />
             </Route>
             <Route path="/visitor/list">
-              <VisitorList authService={props.authService} />
+              <VisitorList
+                authService={props.authService}
+                imgChange={props.imgChange}
+              />
             </Route>
           </Switch>
         </div>

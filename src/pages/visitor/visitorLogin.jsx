@@ -3,6 +3,7 @@ import google from "../../images/google.png";
 import { useHistory } from "react-router";
 import computer from "../../images/컴퓨터.gif";
 import githubImg from "../../images/githubIcon.svg";
+import facebookImg from "../../images/facebook.svg";
 
 const VisitorLogin = (props) => {
   const history = useHistory();
@@ -35,7 +36,7 @@ const VisitorLogin = (props) => {
 
   // 만약에 loginInfo가 있다면 goVisitor로 이동한다.(uid를 가지고 )
   useEffect(() => {
-    console.log(loginInfo, "4");
+    // console.log(loginInfo, "4");
     props.authService.onAuthChange(
       (user) => {
         user && goVisitor(user.uid);
@@ -48,6 +49,7 @@ const VisitorLogin = (props) => {
   return (
     <div className="visitor_login_container">
       <img src={computer} alt="computer" className="computerImg" />
+      <div className="visitor_header">발자취 남기기</div>
       <div className="visitor_btn_container">
         <div className="google_container">
           <img
@@ -56,7 +58,7 @@ const VisitorLogin = (props) => {
             className="Google"
             onClick={handleLogin}
           />
-          <p className="googleLogin">Google 로그인</p>
+          {/* <p className="googleLogin">Google 로그인</p> */}
         </div>
         <div className="github_container">
           <img
@@ -65,16 +67,16 @@ const VisitorLogin = (props) => {
             className="Github"
             onClick={handleLogin}
           />
-          <p className="githubLogin">github 로그인</p>
+          {/* <p className="githubLogin">github 로그인</p> */}
         </div>
         <div className="facebook_container">
           <img
-            src={githubImg}
-            alt="githubImg"
+            src={facebookImg}
+            alt="facebookImg"
             className="Facebook"
             onClick={handleLogin}
           />
-          <p className="githubLogin">Facebook 로그인</p>
+          {/* <p className="facebookLogin">Facebook 로그인</p> */}
         </div>
       </div>
       {/* <button onClick={() => console.log(loginInfo)}>버튼</button> */}

@@ -3,7 +3,7 @@ import "../../styles/intro/intro.scss";
 import close from "../../images/close.png";
 import minizewindow from "../../images/windowminimize.png";
 import IntroMain from "../../components/introMain";
-import { Route, Switch } from "react-router";
+import { Route, Switch } from "react-router-dom";
 import Read from "./read";
 
 const Intro = () => {

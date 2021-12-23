@@ -24,7 +24,7 @@ class AuthService {
     // console.log(provider);
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result.user.uid, "1");
+        // console.log(result.user.uid, "1");
         goVisitor(result.user.uid);
       })
       .catch((error) => {
@@ -43,7 +43,7 @@ class AuthService {
   // 콜백함수로 들어온 change함수에 사용자정보를 업데이트.
   ///onAuthStateChanged() 사용자가 로그인인지 로그아웃인지 확인가능
   onAuthChange(change) {
-    console.log("5");
+    // console.log("5");
     const auth = getAuth(firebaseApp);
     onAuthStateChanged(auth, (사용자정보) => {
       // console.log(사용자정보);

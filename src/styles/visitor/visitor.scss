@@ -57,6 +57,7 @@
         align-items: center;
         border: 3px solid #f2d1d1;
         border-radius: 10px;
+        justify-content: space-evenly;
         .computerImg {
           height: 60%;
           width: 70%;
@@ -64,19 +65,26 @@
           border-bottom: 2px solid rgb(218, 216, 216);
           // padding: 5% 0%;
         }
+        .visitor_header {
+          font-size: 1.4em;
+          font-weight: 800;
+        }
         .visitor_btn_container {
+          width: 60%;
           height: 30%;
-          width: 70%;
           display: flex;
+          justify-content: center;
+          justify-content: space-evenly;
           .google_container {
-            width: 50%;
+            width: 20%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5%;
+            // padding: 6%;
             .Google {
-              height: 100%;
+              width: 100%;
+              height: 48%;
               margin-bottom: 5%;
               cursor: pointer;
             }
@@ -84,19 +92,20 @@
               font-size: 1.1rem;
               font-weight: bolder;
               border: 2.5px solid #c4cdff;
-              padding: 5%;
+              // padding: 6%;
               border-radius: 15px;
             }
           }
           .github_container {
-            width: 50%;
+            width: 20%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5%;
+            // padding: 6%;
             .Github {
-              height: 100%;
+              width: 100%;
+              height: 48%;
               margin-bottom: 5%;
               cursor: pointer;
             }
@@ -104,7 +113,28 @@
               font-size: 1.1rem;
               font-weight: bolder;
               border: 2.5px solid #c4cdff;
-              padding: 5%;
+              // padding: 5%;
+              border-radius: 15px;
+            }
+          }
+          .facebook_container {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // padding: 6%;
+            .Facebook {
+              width: 100%;
+              height: 48%;
+              margin-bottom: 5%;
+              cursor: pointer;
+            }
+            .facebookLogin {
+              font-size: 1.1rem;
+              font-weight: bolder;
+              border: 2.5px solid #c4cdff;
+              // padding: 5%;
               border-radius: 15px;
             }
           }

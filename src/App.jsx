@@ -53,7 +53,10 @@ function App(props) {
                   <Intro />
                 </Route>
                 <Route path="/visitor">
-                  <Visitor authService={props.authService} />
+                  <Visitor
+                    authService={props.authService}
+                    imgChange={props.imgChange}
+                  />
                 </Route>
                 <Route exact path="/todo">
                   <Todo />
