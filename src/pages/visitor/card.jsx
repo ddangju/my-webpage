@@ -23,7 +23,7 @@ function Card({ item }) {
   return (
     <div className="cardContainer">
       <div className="cardImgContainer">
-        <img src={url} alt="userImg" className="cardImg" />
+        <img src={url} alt={fileName} className="cardImg" />
         <div className="user_name">{nameRef}</div>
       </div>
       <div className="user_card">
@@ -32,7 +32,7 @@ function Card({ item }) {
         </div>
         <div className="user_title">{titleRef}</div>
         <div className="user_message">{textareaRef}</div>
-        <div className="user_fileName">{fileName}</div>
+        {/* <div className="user_fileName">{fileName}</div> */}
       </div>
     </div>
   );

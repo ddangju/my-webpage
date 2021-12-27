@@ -4,9 +4,9 @@ import CardList from "./cardList";
 import "../../styles/visitor/visitorList.scss";
 
 const VisitorList = (props) => {
-  console.log(props.imgChange);
+  console.log(props.imgChange.upload);
   const history = useHistory();
-
+  const [file, setFile] = useState({ fileName: null, fileURL: null });
   const [cards, setCards] = useState([]);
   const formRef = useRef();
   const nameRef = useRef();
@@ -19,6 +19,14 @@ const VisitorList = (props) => {
     const update = [...cards, card];
     setCards(update);
   };
+  const fileUpload = (file) => {
+    console.log(file.name);
+    console.log(file.url);
+    setFile({
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     const userCard = {
@@ -28,8 +36,8 @@ const VisitorList = (props) => {
       titleRef: titleRef.current.value || "",
       selectRef: selectRef.current.value,
       textareaRef: textareaRef.current.value || "",
-      fileName: "",
-      fileURL: "",
+      fileName: file.fileName || "",
+      fileURL: file.fileURL || "",
     };
     formRef.current.reset();
     addCard(userCard);
@@ -48,8 +56,8 @@ const VisitorList = (props) => {
   ///실제로 사진을 바꾸는 input창
   const onFileChange = async (e) => {
     const uploaded = await props.imgChange.upload(e.target.files[0]);
-    console.log(uploaded);
-    props.fileUpload({
+    // console.log(uploaded);
+    fileUpload({
       name: uploaded.original_filename,
       url: uploaded.url,
     });
