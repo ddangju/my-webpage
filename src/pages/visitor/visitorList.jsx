@@ -4,10 +4,16 @@ import CardList from "./cardList";
 import "../../styles/visitor/visitorList.scss";
 
 const VisitorList = (props) => {
-  console.log(props.imgChange.upload);
+  // console.log(props);
   const history = useHistory();
+  let state = history.location.state;
+  const [userId, setUserId] = useState(state && state.id);
+
+  // console.log("props확인", history.location.state);
+
   const [file, setFile] = useState({ fileName: null, fileURL: null });
-  const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [cards, setCards] = useState({});
   const formRef = useRef();
   const nameRef = useRef();
   const titleRef = useRef();
@@ -15,13 +21,31 @@ const VisitorList = (props) => {
   const textareaRef = useRef();
   const inputRef = useRef();
 
+  ///updated의 card.id라는 key 값에 접근하여 card를 할당해준다
+  ///{1640610742929 : card}
   const addCard = (card) => {
-    const update = [...cards, card];
-    setCards(update);
+    console.log("나카드", card);
+    setCards((cards) => {
+      console.log("나카드즈", cards);
+      const updated = { ...cards };
+      console.log("업뎃", updated);
+      console.log("card.id", card.id);
+      console.log("할당전", updated[card.id]);
+      updated[card.id] = card;
+      console.log("업뎃+카드아디", updated[card.id]);
+
+      return updated;
+    });
+    // console.log("카드", card);
+    // const update = [...cards, card];
+    // console.log("업데이트", update);
+    // console.log(update[card.id]);
+    // setCards(update);
+    props.cardRepository.saveCard(userId, card);
   };
+
   const fileUpload = (file) => {
-    console.log(file.name);
-    console.log(file.url);
+    // console.log("파일업로드");
     setFile({
       fileName: file.name,
       fileURL: file.url,
@@ -41,6 +65,7 @@ const VisitorList = (props) => {
     };
     formRef.current.reset();
     addCard(userCard);
+    // console.log("클릭했음");
   };
 
   const onLogout = () => {
@@ -55,8 +80,13 @@ const VisitorList = (props) => {
 
   ///실제로 사진을 바꾸는 input창
   const onFileChange = async (e) => {
+    setLoading(true);
+    // console.log("사진바꾸기1");
     const uploaded = await props.imgChange.upload(e.target.files[0]);
+    setLoading(false);
     // console.log(uploaded);
+    // setTest(uploaded);
+
     fileUpload({
       name: uploaded.original_filename,
       url: uploaded.url,
@@ -66,11 +96,15 @@ const VisitorList = (props) => {
   ///만약에 user 내용이 없다면 visitor로 돌려보낸다.
   useEffect(() => {
     props.authService.onAuthChange((user) => {
-      if (!user) {
+      // console.log("uid", user);
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push("/visitor");
       }
     });
-  });
+  }, [history, props.authService]);
+  // console.log("file>>>>", file);
   return (
     <>
       <div className="visitorList_container">
@@ -91,9 +125,14 @@ const VisitorList = (props) => {
               onChange={onFileChange}
               className="userImgFile"
             />
-            <button className="imgBtn" onClick={onBtnClick}>
-              사진올리기
-            </button>
+            {loading && <div className="loading"></div>}
+            {!file.fileURL ? (
+              <button className="imgBtn" onClick={onBtnClick}>
+                사진올리기
+              </button>
+            ) : (
+              <img src={file.fileURL} />
+            )}
           </div>
           <div className="user_editor_container">
             <div className="user_editor_name_title">

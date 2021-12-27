@@ -12,7 +12,7 @@ const VisitorLogin = (props) => {
 
   const goVisitor = useCallback(
     (item) => {
-      console.log(item, "3");
+      // console.log("govisitor", item);
       history.push({
         pathname: "/visitor/list",
         state: { id: item },

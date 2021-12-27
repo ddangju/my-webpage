@@ -3,7 +3,7 @@
 .visitorList_container {
   background-color: rgb(255, 244, 244);
   width: 100%;
-  height: 100%;
+  height: 94%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,8 +21,8 @@
   }
   .visitorList_list_container {
     width: 95%;
-    height: 40%;
-    background-color: khaki;
+    height: 35%;
+    // background-color: khaki;
     display: flex;
     padding: 0.5em;
     flex-direction: row;
@@ -31,11 +31,19 @@
     .user_img_container {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       width: 15%;
       height: 90%;
-      justify-content: space-evenly;
       .userImgFile {
         display: none;
+      }
+      .loading {
+        width: 100%;
+        height: 63%;
+        border-radius: 50%;
+        border: 3px solid grey;
+        border-top: 1px solid rgb(252, 179, 191);
+        animation: spin 2s linear infinite;
       }
 
       .user_editor_img {
@@ -50,13 +58,15 @@
       }
     }
     .user_editor_container {
-      width: 70%;
+      width: 85%;
       height: 100%;
       display: flex;
+      padding: 0.5em;
       flex-direction: column;
+      align-items: center;
       .user_editor_name_title {
         align-items: center;
-        width: 80%;
+        width: 100%;
         height: 30%;
         display: flex;
         justify-content: space-between;
@@ -83,18 +93,25 @@
       }
       .textarea_container {
         display: flex;
-        width: 80%;
+        width: 100%;
         height: 70%;
         flex-direction: column;
         // padding-top: 1em;
         .user_textarea {
           height: 80%;
+          border: 1px solid #c1a1a1;
+          // width: 70%;
+        }
+        .user_textarea:focus {
+          border: none;
+          outline: none;
           // width: 70%;
         }
         .user_submit {
           margin-top: 1em;
           width: 20%;
           height: 30%;
+          border: 1px solid #c1a1a1;
         }
       }
     }
@@ -104,15 +121,15 @@
   .visitorList_preview {
     background-color: white;
     // overflow: scroll;
-    overflow-y: scroll;
+    overflow: auto;
     width: 95%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
+    height: 55%;
+    // display: flex;
+    // flex-direction: column;
 
     .cardContainer {
       width: 100%;
-      height: 35%;
+      height: 45%;
       display: flex;
       align-items: center;
       margin: 1em 0em;
@@ -130,8 +147,8 @@
         align-items: center;
         height: 80%;
         .cardImg {
-          width: 100%;
-          height: 80%;
+          width: 5rem;
+          height: 5rem;
           border-radius: 50%;
         }
         .user_name {
@@ -161,5 +178,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

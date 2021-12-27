@@ -56,6 +56,7 @@ function App(props) {
                   <Visitor
                     authService={props.authService}
                     imgChange={props.imgChange}
+                    cardRepository={props.cardRepository}
                   />
                 </Route>
                 <Route exact path="/todo">

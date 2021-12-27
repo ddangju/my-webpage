@@ -4,6 +4,7 @@ import defaultIMg from "../../images/react.png";
 const DEFAULT_IMAGE = defaultIMg;
 
 function Card({ item }) {
+  // console.log("카드", item);
   const { nameRef, titleRef, fileURL, fileName, textareaRef, today } = item;
 
   let year = today.getFullYear();

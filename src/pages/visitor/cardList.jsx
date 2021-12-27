@@ -1,13 +1,14 @@
 import React from "react";
 import Card from "./card";
 
-function CardList({ cards }) {
+const CardList = ({ cards }) => {
   // console.log(cards, "cards");
   return (
     <>
-      {cards.map((item, idx) => (
-        <Card item={item} key={idx} />
+      {Object.keys(cards).map((key) => (
+        <Card item={cards[key]} key={key} />
       ))}
+
       {/* <Card>
         {testList.map((item) => {
           obj = item.name;
@@ -16,6 +17,6 @@ function CardList({ cards }) {
       </Card> */}
     </>
   );
-}
+};
 
 export default CardList;
