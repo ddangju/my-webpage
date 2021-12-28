@@ -7,9 +7,9 @@ function Card({ item }) {
   // console.log("카드", item);
   const { nameRef, titleRef, fileURL, fileName, textareaRef, today } = item;
 
-  let year = today.getFullYear();
-  let month = today.getMonth();
-  let day = today.getDate();
+  // let year = today.getFullYear();
+  // let month = today.getMonth();
+  // let day = today.getDate();
 
   ///파일url이 있다면 이걸쓰고
 
@@ -28,9 +28,7 @@ function Card({ item }) {
         <div className="user_name">{nameRef}</div>
       </div>
       <div className="user_card">
-        <div>
-          {year}.{month}.{day}
-        </div>
+        <div>{/* {year}.{month}.{day} */}</div>
         <div className="user_title">{titleRef}</div>
         <div className="user_message">{textareaRef}</div>
         {/* <div className="user_fileName">{fileName}</div> */}

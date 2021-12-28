@@ -55,7 +55,7 @@ const VisitorList = (props) => {
     e.preventDefault();
     const userCard = {
       id: Date.now(),
-      today: new Date(),
+      // today: new Date(),
       nameRef: nameRef.current.value || "",
       titleRef: titleRef.current.value || "",
       selectRef: selectRef.current.value,
@@ -104,6 +104,20 @@ const VisitorList = (props) => {
       }
     });
   }, [history, props.authService]);
+
+  ///사용자 아이디가 없다면 실행하지않고
+  //있다면 실행한다.
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = props.cardRepository.syncCard(userId, (cards) => {
+      setCards(cards);
+    });
+    return () => {
+      stopSync();
+    };
+  }, [userId, cards, props.cardRepository]);
   // console.log("file>>>>", file);
   return (
     <>
