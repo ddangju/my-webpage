@@ -1,6 +1,6 @@
 import { firebaseApp } from "./firebase";
 
-import { getDatabase, set, ref, onValue, update, off } from "firebase/database";
+import { getDatabase, set, ref, onValue, off } from "firebase/database";
 
 class CardRepository {
   //새로운 데이터를 받아오면 콜백함수가 두번재 인자로 전달되고
@@ -18,10 +18,12 @@ class CardRepository {
     //   const value = snapshot.val();
     //   value && onUpdate(value);
     // });
-    console.log(dataRef);
     // return () => {};
     // return () => dataRef.off(database, `${userId}/cards`);
+    // console.log("gd");
     return () => off(dataRef);
+    // return () => off(dataRef);
+    // off(dataRef);
   }
 
   saveCard(userId, card) {

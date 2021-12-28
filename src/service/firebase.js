@@ -10,11 +10,6 @@ const config = {
 };
 
 // Initialize Firebase
-// export const firebaseApp = initializeApp(config);
-
+export const firebaseApp = initializeApp(config);
 ///const firebaseApp = initializeApp(config);
 /// export default firebaseApp;
-const firebaseApp = initializeApp(config);
-
-export const firebaseAuth = firebaseApp.auth();
-export const firebaseDatabase = firebaseApp.database();

@@ -24,23 +24,12 @@ const VisitorList = (props) => {
   ///updated의 card.id라는 key 값에 접근하여 card를 할당해준다
   ///{1640610742929 : card}
   const addCard = (card) => {
-    console.log("나카드", card);
     setCards((cards) => {
-      console.log("나카드즈", cards);
       const updated = { ...cards };
-      console.log("업뎃", updated);
-      console.log("card.id", card.id);
-      console.log("할당전", updated[card.id]);
       updated[card.id] = card;
-      console.log("업뎃+카드아디", updated[card.id]);
-
       return updated;
     });
-    // console.log("카드", card);
-    // const update = [...cards, card];
-    // console.log("업데이트", update);
-    // console.log(update[card.id]);
-    // setCards(update);
+
     props.cardRepository.saveCard(userId, card);
   };
 
@@ -51,11 +40,17 @@ const VisitorList = (props) => {
       fileURL: file.url,
     });
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    const date = new Date();
+    const year = String(date.getFullYear());
+    const month = String(date.getMonth() + 1);
+    const day = String(date.getDate());
+    const today = year + month + day;
     const userCard = {
       id: Date.now(),
-      // today: new Date(),
+      today: today,
       nameRef: nameRef.current.value || "",
       titleRef: titleRef.current.value || "",
       selectRef: selectRef.current.value,
@@ -111,13 +106,15 @@ const VisitorList = (props) => {
     if (!userId) {
       return;
     }
+    // props.cardRepository.syncCard(userId, (cards) => {
+    //   setCards(cards);
+    // });
+
     const stopSync = props.cardRepository.syncCard(userId, (cards) => {
       setCards(cards);
     });
-    return () => {
-      stopSync();
-    };
-  }, [userId, cards, props.cardRepository]);
+    return () => stopSync();
+  }, [props.cardRepository, userId]);
   // console.log("file>>>>", file);
   return (
     <>
