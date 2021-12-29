@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import CardList from "./cardList";
 import "../../styles/visitor/visitorList.scss";
 
-const VisitorList = (props) => {
+const VisitorList = ({ cardRepository, authService, imgChange }) => {
   // console.log(props);
   const history = useHistory();
   let state = history.location.state;
@@ -30,7 +30,7 @@ const VisitorList = (props) => {
       return updated;
     });
 
-    props.cardRepository.saveCard(userId, card);
+    cardRepository.saveCard(userId, card);
   };
 
   const fileUpload = (file) => {
@@ -64,7 +64,7 @@ const VisitorList = (props) => {
   };
 
   const onLogout = () => {
-    props.authService.logout();
+    authService.logout();
   };
 
   ///사진 올리는 버튼
@@ -77,7 +77,7 @@ const VisitorList = (props) => {
   const onFileChange = async (e) => {
     setLoading(true);
     // console.log("사진바꾸기1");
-    const uploaded = await props.imgChange.upload(e.target.files[0]);
+    const uploaded = await imgChange.upload(e.target.files[0]);
     setLoading(false);
     // console.log(uploaded);
     // setTest(uploaded);
@@ -90,7 +90,7 @@ const VisitorList = (props) => {
 
   ///만약에 user 내용이 없다면 visitor로 돌려보낸다.
   useEffect(() => {
-    props.authService.onAuthChange((user) => {
+    authService.onAuthChange((user) => {
       // console.log("uid", user);
       if (user) {
         setUserId(user.uid);
@@ -98,7 +98,7 @@ const VisitorList = (props) => {
         history.push("/visitor");
       }
     });
-  }, [history, props.authService]);
+  }, [history, authService]);
 
   ///사용자 아이디가 없다면 실행하지않고
   //있다면 실행한다.
@@ -110,11 +110,11 @@ const VisitorList = (props) => {
     //   setCards(cards);
     // });
 
-    const stopSync = props.cardRepository.syncCard(userId, (cards) => {
+    const stopSync = cardRepository.syncCard(userId, (cards) => {
       setCards(cards);
     });
     return () => stopSync();
-  }, [props.cardRepository, userId]);
+  }, [cardRepository, userId]);
   // console.log("file>>>>", file);
   return (
     <>
@@ -127,7 +127,6 @@ const VisitorList = (props) => {
         </div>
         <form className="visitorList_list_container" ref={formRef}>
           <div className="user_img_container">
-            {/* <img className="user_editor_img" src="" alt="photo" /> */}
             <input
               type="file"
               accept="image/*"
@@ -142,7 +141,7 @@ const VisitorList = (props) => {
                 사진올리기
               </button>
             ) : (
-              <img src={file.fileURL} />
+              <img src={file.fileURL} alt="phot" />
             )}
           </div>
           <div className="user_editor_container">

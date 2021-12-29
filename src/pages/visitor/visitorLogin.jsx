@@ -7,7 +7,7 @@ import facebookImg from "../../images/facebook.svg";
 
 const VisitorLogin = (props) => {
   const history = useHistory();
-  const [loginInfo, setLoginInfo] = useState(null);
+  const [loginInfo] = useState(null);
   // console.log(props.authService, "login");
 
   const goVisitor = useCallback(

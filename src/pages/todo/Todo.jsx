@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import close from "../../images/close.png";
 import minizewindow from "../../images/windowminimize.png";
 import "../../styles/todo/todo.scss";

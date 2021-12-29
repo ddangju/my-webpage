@@ -1,6 +1,5 @@
 import "./App.scss";
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Intro from "./pages/intro/Intro";
@@ -18,22 +17,20 @@ function App(props) {
 
   const startBooting = document.getElementsByClassName("bootingImg");
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     startBooting[0].classList.add("hidden");
-  //   }, 2500);
-  // }, [startBooting]);
+  useEffect(() => {
+    setTimeout(() => {
+      startBooting[0].classList.add("hidden");
+    }, 2500);
+  }, [startBooting]);
 
-  // console.log(performance.navigation.type);
   // useEffect(() => {
-  //   if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  //   if (window.PerformanceNavigationTiming.type === "reload") {
   //     window.location.href = "/";
   //   }
   // }, []);
-  // console.log(props.authService, "app");
   return (
     <div className="App">
-      {/* <img src={booting} alt="이미지" className="bootingImg" /> */}
+      <img src={booting} alt="이미지" className="bootingImg" />
       <Router>
         <Switch>
           <Route exact path="/youtubeMain">

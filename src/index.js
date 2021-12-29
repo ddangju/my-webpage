@@ -8,6 +8,7 @@ import Youtube from "./service/youtubeService";
 import AuthService from "./service/auth_service";
 import imgUpload from "./service/image_uploader";
 import CardRepository from "./service/card_repository";
+import "./service/firebase";
 
 const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_KEY);
 const authService = new AuthService();

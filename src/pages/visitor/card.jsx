@@ -36,11 +36,11 @@ function Card({ item }) {
   );
 }
 
-function getStyle(theme) {
-  switch (theme) {
-    case "dark":
-      return ".dark";
-  }
-}
+// function getStyle(theme) {
+//   switch (theme) {
+//     case "dark":
+//       return ".dark";
+//   }
+// }
 
 export default Card;
