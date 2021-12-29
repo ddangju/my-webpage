@@ -11,7 +11,7 @@
  
 
 ## 🖱  기술스텍
-  Html, Css(scss), React, Javascript, React-router-dom, RESTFUL API
+  Html, Css(scss), React, Javascript, React-router-dom, RESTFUL API, Firebase, youtubeAPI
   
 
 
