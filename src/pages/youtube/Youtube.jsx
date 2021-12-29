@@ -25,40 +25,40 @@ const Youtube = (props) => {
             ></img>
             <img className="close-icon" src={close} width="25" alt="사진" />
           </div>
-          <div className="login">
-            <img src={logo} alt="사진" />
-            <form className="formContainer">
-              <p className="form_id">사용자 이름</p>
-              <input
-                className="id_input"
-                placeholder="사용자 이름을 입력하세요"
-                type="text"
-                onChange={handleChange}
-              />
-              {/* <p className="form_pw"> 비밀번호 </p>
+        </div>
+        <div className="login">
+          <img src={logo} alt="사진" />
+          <form className="formContainer">
+            <p className="form_id">사용자 이름</p>
+            <input
+              className="id_input"
+              placeholder="사용자 이름을 입력하세요"
+              type="text"
+              onChange={handleChange}
+            />
+            {/* <p className="form_pw"> 비밀번호 </p>
               <input
                 className="pw_input"
                 placeholder="Password"
                 type="password"
               /> */}
-              <div className="button">
-                <button
-                  className="login_button"
-                  type="submit"
-                  onClick={() =>
-                    test.push({
-                      pathname: "/youtubeMain",
-                      state: {
-                        inputValue: inputValue,
-                      },
-                    })
-                  }
-                >
-                  입장하기
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="button">
+              <button
+                className="login_button"
+                type="submit"
+                onClick={() =>
+                  test.push({
+                    pathname: "/youtubeMain",
+                    state: {
+                      inputValue: inputValue,
+                    },
+                  })
+                }
+              >
+                입장하기
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

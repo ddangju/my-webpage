@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import selfie2 from "../../images/me2.jpg";
+import selfie2 from "../../images/me2.png";
 import githubImg from "../../images/githubIcon.svg";
 import velogImg from "../../images/velogImg.jpg";
 

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import google from "../../images/google.png";
+import google from "../../images/google.svg";
 import { useHistory } from "react-router";
 import computer from "../../images/컴퓨터.gif";
 import githubImg from "../../images/githubIcon.svg";

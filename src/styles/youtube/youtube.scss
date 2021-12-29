@@ -1,64 +1,71 @@
 .youtubeLogin {
-  width: 30%;
-  margin-top: 15em;
+  width: 100%;
+  height: 100%;
   animation-duration: 300ms;
   .youtube-main-canvas {
     background: white;
-    width: 29em;
-    height: 22em;
+    width: 30%;
+    height: 40%;
     border-style: solid;
-    border-width: 3px 3px 3px 3px;
-    border-color: rgba(240, 248, 255, 0.918) black black
+    border-width: 5px;
+    border-color: rgba(240, 248, 255, 0.918) rgb(73, 73, 73) rgb(83, 83, 83)
       rgba(240, 248, 255, 0.918);
-    transform: scale(1.06);
+    margin-top: 15%;
+    margin-left: 25%;
   }
-
   .youtube-canvas-top {
+    background-color: #c9c9c9;
+    border-radius: 5px;
     width: 100%;
-    height: 8%;
-    background-color: #2149cc;
-    margin: 0;
-  }
+    height: 10%;
+    border: 2px solid #c1b5b5;
 
-  .youtube-canvas-top-icons {
-    display: flex;
-    justify-content: flex-end;
-    .Minimizedwindow-icon {
-      padding-bottom: 5px;
-      margin-right: 5px;
-      cursor: pointer;
-    }
-    .close-icon {
-      cursor: pointer;
+    .youtube-canvas-top-icons {
+      display: flex;
+      justify-content: flex-end;
+      .Minimizedwindow-icon {
+        padding-bottom: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      .close-icon {
+        cursor: pointer;
+      }
     }
   }
   .login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2em;
+    width: 100%;
+    height: 90%;
+    background-color: #cca7a7;
+    border-radius: 10px;
+    border-width: 1px 2px 2px 1px;
+    border-color: #f9bfbf;
+    border-style: solid;
     .formContainer {
       display: flex;
       flex-direction: column;
-      margin-top: 2em;
+      // margin-top: 2em;
       .form_id,
       .form_pw {
         font-size: 1em;
         font-weight: bolder;
-        margin-bottom: 0.5em;
+        // margin-bottom: 0.5em;
       }
       .id_input,
       .pw_input {
         height: 2.3em;
         border: 2px solid #dfdfdf;
-        margin-bottom: 0.5em;
+        // margin-bottom: 0.5em;
         border-radius: 5px;
       }
       .button {
         .login_button {
           width: 100%;
           height: 2em;
-          margin-top: 1em;
+          // margin-top: 1em;
           font-size: 1em;
           border: none;
         }
