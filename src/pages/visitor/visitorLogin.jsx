@@ -34,13 +34,12 @@ const VisitorLogin = (props) => {
   //   }
   // }, [goVisitor, loginInfo]);
 
-  // 만약에 loginInfo가 있다면 goVisitor로 이동한다.(uid를 가지고 )
+  // 만약에 loginInfo가 있다면 리스트로 이동한다.(uid를 가지고 )
   useEffect(() => {
     // console.log(loginInfo, "4");
     props.authService.onAuthChange(
       (user) => {
         user && goVisitor(user.uid);
-        // loginInfo && goVisitor(console.log("Gd"));
       }
       //사용자가 바뀌면 실행하는 함수
     );

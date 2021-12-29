@@ -8,7 +8,6 @@ import {
   onAuthStateChanged,
   FacebookAuthProvider,
 } from "firebase/auth";
-console.log(">>>>>>>>>>>", { firebaseApp }.firebaseApp);
 
 class AuthService {
   login(textContent, goVisitor) {
