@@ -1,12 +1,21 @@
 import React from "react";
 import "../styles/footer.scss";
 import bottomPhoto from "../images/badge.png";
+import Modal from "../components/modal";
+import { useState } from "react/cjs/react.development";
 
 const Footer = () => {
+  const [show, setShow] = useState(false);
+
+  const handleMenu = () => {
+    setShow(!show);
+  };
+  console.log(show);
   return (
     <div className="bottom_section">
+      {show && <Modal></Modal>}
       <div className="bottom">
-        <div className="bottom-inner">
+        <div className="bottom-inner" onClick={handleMenu}>
           <img src={bottomPhoto} alt="사진" className="windowImg" />
           <div className="bottom-inner-start">시작</div>
         </div>

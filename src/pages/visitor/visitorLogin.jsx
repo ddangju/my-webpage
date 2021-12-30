@@ -24,6 +24,9 @@ const VisitorLogin = (props) => {
   const handleLogin = (e) => {
     props.authService.login(e.target.className, goVisitor);
   };
+  const authLogin = () => {
+    props.authService.nonMember();
+  };
 
   //loginInfo값이 바뀌면 goVIsitor에 인자로 값을 넣어 실행한다.
   // useEffect(() => {
@@ -77,6 +80,7 @@ const VisitorLogin = (props) => {
           />
           {/* <p className="facebookLogin">Facebook 로그인</p> */}
         </div>
+        <div onClick={authLogin}>비회원로그인</div>
       </div>
       {/* <button onClick={() => console.log(loginInfo)}>버튼</button> */}
     </div>

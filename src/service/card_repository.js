@@ -29,6 +29,7 @@ class CardRepository {
   saveCard(userId, card) {
     const database = getDatabase(firebaseApp);
     set(ref(database, `${userId}/cards/${card.id}`), card);
+    // set(ref(database, `hello/user`), card);
   }
 }
 

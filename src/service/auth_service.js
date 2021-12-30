@@ -7,9 +7,23 @@ import {
   GithubAuthProvider,
   onAuthStateChanged,
   FacebookAuthProvider,
+  signInAnonymously,
 } from "firebase/auth";
 
 class AuthService {
+  nonMember() {
+    const auth = getAuth(firebaseApp);
+    signInAnonymously(auth)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ...
+      });
+  }
+
   login(textContent, goVisitor) {
     let provider;
     if (textContent === "Google") {
@@ -21,6 +35,7 @@ class AuthService {
     }
 
     const auth = getAuth(firebaseApp);
+
     // console.log(provider);
     signInWithPopup(auth, provider)
       .then((result) => {
