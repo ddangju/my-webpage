@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../../styles/youtube/youtube.scss";
-import logo from "../../images/logo.png";
 import close from "../../images/close.png";
 import minizewindow from "../../images/windowminimize.png";
+import youtubeGjf from "../../images/youtube.gif";
+import youtubeLogo from "../../images/youtubeLogo.svg";
 
 const Youtube = (props) => {
   let [inputValue, setInputValue] = useState("");
@@ -27,9 +28,10 @@ const Youtube = (props) => {
           </div>
         </div>
         <div className="login">
-          <img src={logo} alt="사진" />
+          <img src={youtubeGjf} alt="사진" className="youtubeGif" />
+          <img src={youtubeLogo} alt="사진" className="youtubeLogo" />
           <form className="formContainer">
-            <p className="form_id">사용자 이름</p>
+            {/* <p className="form_id">사용자 이름</p> */}
             <input
               className="id_input"
               placeholder="사용자 이름을 입력하세요"
@@ -42,22 +44,20 @@ const Youtube = (props) => {
                 placeholder="Password"
                 type="password"
               /> */}
-            <div className="button">
-              <button
-                className="login_button"
-                type="submit"
-                onClick={() =>
-                  test.push({
-                    pathname: "/youtubeMain",
-                    state: {
-                      inputValue: inputValue,
-                    },
-                  })
-                }
-              >
-                입장하기
-              </button>
-            </div>
+            <button
+              className="login_button"
+              type="submit"
+              onClick={() =>
+                test.push({
+                  pathname: "/youtubeMain",
+                  state: {
+                    inputValue: inputValue,
+                  },
+                })
+              }
+            >
+              입장하기
+            </button>
           </form>
         </div>
       </div>
