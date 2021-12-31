@@ -1,32 +1,19 @@
 import React from "react";
-import close from "../../images/close.png";
-import minizewindow from "../../images/windowminimize.png";
 import "../../styles/visitor/visitor.scss";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import VisitorLogin from "./visitorLogin";
 import VisitorList from "./visitorList";
+import { useHistory } from "react-router-dom";
+import Icons from "../../components/icons";
 
 const Visitor = (props) => {
-  // console.log(props.authService, "visitor");
+  const history = useHistory();
 
   return (
     <div className="animate__animated animate__zoomIn visitorContainer">
       <div className="visitor-main-canvas">
         <div className="visitor-canvas-top">
-          <div className="visitor-canvas-top-icons">
-            <img
-              className="visitor-Minimizedwindow-icon"
-              src={minizewindow}
-              width="15"
-              alt="사진"
-            ></img>
-            <img
-              className="visitor-close-icon"
-              src={close}
-              width="25"
-              alt="사진"
-            />
-          </div>
+          <Icons></Icons>
         </div>
         <div className="visitor_context">
           <Switch>

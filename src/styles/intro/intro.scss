@@ -13,7 +13,7 @@
     margin-top: 3%;
     margin-left: 15%;
     border-radius: 5px;
-    background-color: #ffefef;
+    background-color: #ffffff;
     border-style: solid;
     border-width: 5px;
     border-color: rgba(240, 248, 255, 0.918) rgb(73, 73, 73) rgb(83, 83, 83)
@@ -25,25 +25,6 @@
       background-color: #c9c9c9;
       border: 3px solid #c1b5b5;
       margin-bottom: 0.3%;
-      .intro-canvas-top-icons {
-        display: flex;
-        justify-content: flex-end;
-        height: 100%;
-        align-items: center;
-        padding-right: 1%;
-        width: 100%;
-        .intro-Minimizedwindow-icon {
-          cursor: pointer;
-          height: 70%;
-          margin-right: 0.5%;
-          width: 2%;
-          padding-bottom: 0.5%;
-        }
-        .intro-close-icon {
-          cursor: pointer;
-          height: 70%;
-        }
-      }
     }
     .readContainer {
       width: 100%;
@@ -93,13 +74,6 @@
               font-weight: 600;
             }
           }
-          // .selfie_heart::before {
-          //   content: "\f004";
-          //   color: red;
-          //   width: 25%;
-          //   font-size: 60px;
-          // }
-
           .selfieGithub,
           .selfievelogImg {
             width: 25%;
@@ -108,57 +82,23 @@
           }
         }
       }
-      .ContextContainer {
+      .contextContainer {
         width: 65%;
-        height: 95%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-
+        padding: 3%;
+        border: 2px solid #e09292;
         .contextHeader {
-          font-weight: bolder;
-          font-size: 1.3em;
+          font-weight: 800;
+          font-size: 1.3rem;
         }
-        .birthContainer,
-        .ageContainer,
-        .jobContainer,
-        .phoneContainer,
-        .nickNameContainer,
-        .mbtiContainer {
+        .titleContainer {
           display: flex;
-          margin-top: 0.8em;
-          .birth,
-          .age,
-          .job,
-          .phone,
-          .nickName,
-          .mbti,
-          .favorite,
-          .dislike,
-          .introduce,
-          .motto,
-          .introduceContext {
-            font-size: 1em;
-            font-weight: bolder;
-          }
-        }
-        .favorite,
-        .dislike,
-        .introduce,
-        .motto {
-          font-size: 1em;
-          font-weight: bolder;
-          margin-top: 0.8em;
-          margin-bottom: 0.8em;
-        }
-        .text2 {
-          margin-left: 1em;
-        }
-        .introduceContext {
-          .text {
-            margin-bottom: 0.5em;
-            margin-left: 1em;
-          }
+          flex-direction: column;
+          height: 60%;
+          // background-color: white;
+          justify-content: space-evenly;
         }
       }
     }

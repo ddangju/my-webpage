@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import close from "../../images/close.png";
-import minizewindow from "../../images/windowminimize.png";
 import "../../styles/todo/todo.scss";
 import line1 from "../../images/취소선2.png";
 import deleteBtn from "../../images/삭제.png";
 import checkBtn from "../../images/체크.png";
+import Icons from "../../components/icons";
+
 const Todo = () => {
   // let inputRef = useRef();
   let [text, setText] = useState("");
@@ -44,20 +44,7 @@ const Todo = () => {
     <div className="animate__animated animate__zoomIn todoContainer">
       <div className="todo-main-canvas">
         <div className="todo-canvas-top">
-          <div className="todo-canvas-top-icons">
-            <img
-              className="intro-Minimizedwindow-icon"
-              src={minizewindow}
-              width="15"
-              alt="사진"
-            ></img>
-            <img
-              className="intro-close-icon"
-              src={close}
-              width="25"
-              alt="사진"
-            />
-          </div>
+          <Icons />
         </div>
         <div className="todo_list_Container">
           <div className="inputTitle">오늘 할 일!</div>

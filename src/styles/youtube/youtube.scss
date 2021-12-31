@@ -20,25 +20,6 @@
     height: 6%;
     border: 2px solid #c1b5b5;
     margin-bottom: 0.3%;
-
-    .youtube-canvas-top-icons {
-      display: flex;
-      justify-content: flex-end;
-      height: 100%;
-      align-items: center;
-      padding-right: 1%;
-      width: 100%;
-      .Minimizedwindow-icon {
-        height: 70%;
-        width: 2.5%;
-        padding-bottom: 0.5%;
-        cursor: pointer;
-      }
-      .close-icon {
-        cursor: pointer;
-        height: 70%;
-      }
-    }
   }
   .login {
     display: flex;

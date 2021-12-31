@@ -4,6 +4,26 @@ import githubImg from "../../images/githubIcon.svg";
 import velogImg from "../../images/velogImg.jpg";
 
 const Read = () => {
+  const selfTitle = [
+    { title: "””『출생』──┼", item: "1992年 12月 6日" },
+    { title: "””『직업』──┼", item: "개발자♬" },
+    { title: "””『폰번』──┼", item: "010-2213-7129☎" },
+    { title: "””『별명』──┼ ", item: "땅주" },
+    { title: "””『mbti』──┼ ", item: "ⓘⓝⓣⓟ" },
+    {
+      title: "””『좋아하는 것』──┼ ",
+      item: "카페에서 코딩하기, 추리소설읽고 범인추리하기, 방 탈출하기, 맛있는거먹기, 멍 때리기",
+    },
+    {
+      title: "””『싫어하는 것』──┼",
+      item: "더운 날씨♨, 우울감, 배부를 때, 깻잎, 오이...!",
+    },
+    {
+      title: "””『자기소개』──┼ ",
+      item: " 열정과 노력이 없으면 시체🌱 ",
+    },
+  ];
+
   let [count, setCount] = useState(0);
 
   const handleClick = (e) => {
@@ -47,43 +67,34 @@ const Read = () => {
         </div>
       </div>
 
-      <div className="ContextContainer">
+      <div className="contextContainer">
         <p className="contextHeader">★ 김 연 주 (女)</p>
-        <div className="birthContainer">
-          <p className="birth">””『출생』──┼ </p>
-          <p>1992年 12月 6日</p>
+        <div className="titleContainer">
+          {selfTitle.map((item, idx) => {
+            return (
+              <div className="title-header" key={idx}>
+                <div className="context-title" key={item.id}>
+                  {item.title}
+                </div>
+                <p className="context-context">{item.item}</p>
+              </div>
+            );
+          })}
         </div>
-        <div className="ageContainer">
-          <p className="age">””『나이』──┼ </p>
-          <p>30</p>
-        </div>
-        <div className="jobContainer">
-          <p className="job">””『직업』──┼ </p>
-          <p>개발자♬</p>
-        </div>
-        <div className="phoneContainer">
-          <p className="phone">””『폰번』──┼ </p>
-          <p>010-2213-7129☎</p>
-        </div>
-        <div className="nickNameContainer">
-          <p className="nickName">””『별명』──┼ </p>
-          <p>땅주™</p>
-        </div>
-        <div className="mbtiContainer">
-          <p className="mbti">””『mbti』──┼ </p>
-          <p>ⓘⓝⓣⓟ★</p>
-        </div>
-        <p className="favorite">””『좋아하는 것』──┼ </p>
-        <p className="text2">
-          카페에서 코딩하기, 추리소설읽고 범인추리하기, 방 탈출하기, 맛있는거
-          먹기, 멍 때리기
-        </p>
-        <p className="dislike">””『싫어하는 것』──┼ </p>
-        <p className="text2">더운 날씨♨, 우울감, 배부를 때, 깻잎, 오이...!</p>
-        <p className="introduce">””『자기소개』──┼ </p>
-        <p className="motto">"열정과 노력이 없으면 시체🌱"</p>
         <div className="introduceContext">
-          <p className="text">
+          <div>
+            안녕하세요 프론트개발자 김연주입니다🤗 <br />이 웹은 windows98을
+            모티브로하여 포트폴리오로 제작되었습니다. <br />
+            현재 계속해서 리팩토링과 추가구현이 진행중입니다. <br />
+            Skill : Html/css(Scss, animate-css), JavaScript(ES6),
+            React(react-router-dom, function Component), Youtube API, googleAPI,
+            githubAPI, facebookAPI <br />
+            형상관리: git/github <br />
+            배포: vercel <br />
+            데이터베이스: firebase <br />
+            문의 및 버그 제보는 duswn4338@gmail.com
+          </div>
+          {/* <p className="text">
             개발자로 전향을 마음먹기 전, 서비스업에 근무하며 고객들의 원트를
           </p>
           <p className="text">
@@ -113,7 +124,7 @@ const Read = () => {
           <p className="text">
             얻었습니다. 이 프로젝트를 시작으로 계속해서 "물음표"를 "느낌표"로
           </p>
-          <p className="text">바꾸어가는 개발자가 되고싶습니다😄</p>
+          <p className="text">바꾸어가는 개발자가 되고싶습니다😄</p> */}
         </div>
       </div>
     </div>
