@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, memo } from "react";
 import "../../styles/youtube/youtubeNav.scss";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import search from "../../images/search.png";
 import logo from "../../images/logo.png";
 
@@ -65,6 +65,9 @@ const YoutubeNav = memo((props) => {
       </div>
 
       <p className="userName">{name}님, 안녕하세요!</p>
+      <Link to="/" className="homeLink">
+        <i className="fas fa-home homeIcon"></i>
+      </Link>
     </div>
   );
 });
