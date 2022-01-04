@@ -10,7 +10,6 @@ const Footer = () => {
   const handleMenu = () => {
     setShow(!show);
   };
-  console.log(show);
   return (
     <div className="bottom_section">
       {show && <Modal></Modal>}

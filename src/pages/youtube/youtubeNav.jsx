@@ -39,9 +39,9 @@ const YoutubeNav = memo((props) => {
     if (saved !== null) {
       setName(saved);
     }
-    if (saved === "") {
-      setName("사용자");
-    }
+    // if (saved === "") {
+    //   setName("사용자");
+    // }
   }, [inputValue]);
   return (
     <div className="navContainer_youtube">
@@ -56,12 +56,13 @@ const YoutubeNav = memo((props) => {
           className="search"
           onKeyPress={handlePress}
         />
-        <img
+        <i className="fas fa-search searchImg2" onClick={handleClick}></i>
+        {/* <img
           className="searchImg"
           src={search}
           alt="검색"
-          onClick={handleClick}
-        />
+          
+        /> */}
       </div>
 
       <p className="userName">{name}님, 안녕하세요!</p>

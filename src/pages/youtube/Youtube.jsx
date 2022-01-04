@@ -5,9 +5,9 @@ import youtubeGjf from "../../images/youtube.gif";
 import youtubeLogo from "../../images/youtubeLogo.svg";
 import Icons from "../../components/icons";
 
-const Youtube = (props) => {
+const Youtube = () => {
   let [inputValue, setInputValue] = useState("");
-  const test = useHistory();
+  const userName = useHistory();
   const handleChange = (e) => {
     setInputValue(e.currentTarget.value);
   };
@@ -32,7 +32,7 @@ const Youtube = (props) => {
               className="login_button"
               type="submit"
               onClick={() =>
-                test.push({
+                userName.push({
                   pathname: "/youtubeMain",
                   state: {
                     inputValue: inputValue,

@@ -77,13 +77,6 @@
               margin-bottom: 5%;
               cursor: pointer;
             }
-            .googleLogin {
-              font-size: 1.1rem;
-              font-weight: bolder;
-              border: 2.5px solid #c4cdff;
-              // padding: 6%;
-              border-radius: 15px;
-            }
           }
           .github_container {
             width: 20%;
@@ -97,13 +90,6 @@
               height: 48%;
               margin-bottom: 5%;
               cursor: pointer;
-            }
-            .githubLogin {
-              font-size: 1.1rem;
-              font-weight: bolder;
-              border: 2.5px solid #c4cdff;
-              // padding: 5%;
-              border-radius: 15px;
             }
           }
           .facebook_container {
@@ -119,12 +105,18 @@
               margin-bottom: 5%;
               cursor: pointer;
             }
-            .facebookLogin {
-              font-size: 1.1rem;
-              font-weight: bolder;
-              border: 2.5px solid #c4cdff;
-              // padding: 5%;
-              border-radius: 15px;
+          }
+          .nonMember_container {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .nonMember_icon {
+              width: 100%;
+              height: 48%;
+              margin-bottom: 5%;
+              cursor: pointer;
             }
           }
         }

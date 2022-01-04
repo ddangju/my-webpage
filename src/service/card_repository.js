@@ -6,11 +6,14 @@ class CardRepository {
   //새로운 데이터를 받아오면 콜백함수가 두번재 인자로 전달되고
   //db가업데이트(userid가 있을때마다)될대마다 콜백함수가 호출된다.
   //db가 업데이트 될때마다 value와 함께 onUpdate(콜백함수)가 호출된다
-  syncCard(userId, onUpdate) {
+  syncCard(onUpdate) {
     const database = getDatabase(firebaseApp);
-    const dataRef = ref(database, `${userId}/cards`);
+    const dataRef = ref(database, `cards`);
     onValue(dataRef, (snapshot) => {
+      // console.log(snapshot, "<<<<<<<");
+      // console.log(snapshot.val(), "<<<<<<<");
       const value = snapshot.val();
+      console.log(value, "<<<<");
       value && onUpdate(value);
     });
     // onValue(dataRef, (snapshot) => {
@@ -26,9 +29,11 @@ class CardRepository {
     // off(dataRef);
   }
 
-  saveCard(userId, card) {
+  ///입력한 카드 값을 db에 저장하여 사용자를 추가한다.
+  saveCard(card) {
+    // console.log(set(), "<<<<<");
     const database = getDatabase(firebaseApp);
-    set(ref(database, `${userId}/cards/${card.id}`), card);
+    set(ref(database, `cards/${card.id}`), card);
     // set(ref(database, `hello/user`), card);
   }
 }

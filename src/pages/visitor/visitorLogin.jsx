@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import computer from "../../images/컴퓨터.gif";
 import githubImg from "../../images/githubIcon.svg";
 import facebookImg from "../../images/facebook.svg";
+import userImg from "../../images/user.svg";
 
 const VisitorLogin = (props) => {
   const history = useHistory();
@@ -22,6 +23,7 @@ const VisitorLogin = (props) => {
   );
 
   const handleLogin = (e) => {
+    console.log(e.target.className);
     props.authService.login(e.target.className, goVisitor);
   };
   const authLogin = () => {
@@ -60,7 +62,6 @@ const VisitorLogin = (props) => {
             className="Google"
             onClick={handleLogin}
           />
-          {/* <p className="googleLogin">Google 로그인</p> */}
         </div>
         <div className="github_container">
           <img
@@ -69,7 +70,6 @@ const VisitorLogin = (props) => {
             className="Github"
             onClick={handleLogin}
           />
-          {/* <p className="githubLogin">github 로그인</p> */}
         </div>
         <div className="facebook_container">
           <img
@@ -78,9 +78,15 @@ const VisitorLogin = (props) => {
             className="Facebook"
             onClick={handleLogin}
           />
-          {/* <p className="facebookLogin">Facebook 로그인</p> */}
         </div>
-        <div onClick={authLogin}>비회원로그인</div>
+        <div className="nonMember_container">
+          <img
+            src={userImg}
+            alt="userImg"
+            onClick={authLogin}
+            className="nonMember_icon"
+          />
+        </div>
       </div>
       {/* <button onClick={() => console.log(loginInfo)}>버튼</button> */}
     </div>

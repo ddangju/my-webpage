@@ -25,6 +25,7 @@ const YoutubeDetail = (props) => {
         pathname: "/youtubeMain",
         state: {
           searchList: search,
+          user: history.location.state.user,
         },
       });
     }

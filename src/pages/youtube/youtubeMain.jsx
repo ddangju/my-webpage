@@ -8,6 +8,8 @@ const YoutubeMain = (props) => {
   // console.log(props.youtubeKey, ">>>>>>>>>>>>>");
   const [video, setVideo] = useState([]);
   const history = useHistory();
+  const state = history.location.state;
+
   // const searchList = history.location.state.searchList;
   const youtubeKey = props.youtubeKey;
   const [user, setUser] = useState("");
@@ -24,13 +26,13 @@ const YoutubeMain = (props) => {
   //detail에서 넘어오는 state가 없으면 mostPopular(item)을 set
   //들어오면 youtubekey에 담긴 값을 set
   useEffect(() => {
-    if (!history.location.state.searchList) {
+    if (!state.searchList) {
       youtubeKey.mostPopular().then((item) => setVideo(item));
     } else {
-      setVideo(history.location.state.searchList);
+      setVideo(state.searchList);
     }
-    console.log("인기영상", [history.location.state.searchList]);
-  }, [history.location.state.searchList, youtubeKey]);
+    // console.log("인기영상", [state.searchList]);
+  }, [state.searchList, youtubeKey]);
 
   ///영상을 클릭할 때 실행
   useEffect(() => {
@@ -53,10 +55,16 @@ const YoutubeMain = (props) => {
   useEffect(() => {
     // console.log("input", [history?.location?.state?.inputValue]);
     if (localStorage.getItem("id") !== null) {
-      setUser(history?.location?.state?.inputValue);
+      setUser(state?.inputValue);
       // console.log("input2", [history?.location?.state?.inputValue]);
     }
-  }, [history?.location?.state?.inputValue]);
+    if (localStorage.getItem("id") === '""') {
+      setUser("사용자");
+    }
+    if (history.location.state.user) {
+      setUser(history.location.state.user);
+    }
+  }, [state?.inputValue, history.location.state.user]);
 
   return (
     <div>
@@ -68,11 +76,7 @@ const YoutubeMain = (props) => {
           </div>
         )} */}
         <div className="listContainer">
-          <VideoList
-            video={video}
-            onVideoClick={selectVideo}
-            display={selected ? "list" : "grid"}
-          />
+          <VideoList video={video} onVideoClick={selectVideo} />
         </div>
       </section>
     </div>

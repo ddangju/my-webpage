@@ -8,9 +8,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   const history = useHistory();
   let state = history.location.state;
   const [userId, setUserId] = useState(state && state.id);
-
   // console.log("props확인", history.location.state);
-
   const [file, setFile] = useState({ fileName: null, fileURL: null });
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState({});
@@ -24,12 +22,17 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   ///updated의 card.id라는 key 값에 접근하여 card를 할당해준다
   ///{1640610742929 : card}
   const addCard = (card) => {
+    // console.log(card, "cards");
     setCards((cards) => {
+      // console.log(cards, "cards");
       const updated = { ...cards };
+      // console.log(updated, "<<<<<1");
       updated[card.id] = card;
+      // console.log(card, "<<<<<2");
+
       return updated;
     });
-
+    ///usrId는 사용자가 입력한 아이디, card는 입력한 카드의 값
     cardRepository.saveCard(userId, card);
   };
 
@@ -110,11 +113,11 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     //   setCards(cards);
     // });
 
-    const stopSync = cardRepository.syncCard(userId, (cards) => {
+    const stopSync = cardRepository.syncCard((cards) => {
       setCards(cards);
     });
     return () => stopSync();
-  }, [cardRepository, userId]);
+  }, []);
   // console.log("file>>>>", file);
   return (
     <>
