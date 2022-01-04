@@ -94,6 +94,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   ///만약에 user 내용이 없다면 visitor로 돌려보낸다.
   useEffect(() => {
     authService.onAuthChange((user) => {
+      console.log(user, "visitorList");
       // console.log("uid", user);
       if (user) {
         setUserId(user.uid);

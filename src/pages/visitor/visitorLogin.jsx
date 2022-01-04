@@ -7,28 +7,39 @@ import facebookImg from "../../images/facebook.svg";
 import userImg from "../../images/user.svg";
 
 const VisitorLogin = (props) => {
-  const history = useHistory();
-  const [loginInfo] = useState(null);
-  // console.log(props.authService, "login");
-
-  const goVisitor = useCallback(
-    (item) => {
-      // console.log("govisitor", item);
-      history.push({
-        pathname: "/visitor/list",
-        state: { id: item },
-      });
-    },
-    [history]
-  );
-
   const handleLogin = (e) => {
-    console.log(e.target.className);
+    console.log("로그인실행");
     props.authService.login(e.target.className, goVisitor);
   };
+
   const authLogin = () => {
     props.authService.nonMember();
   };
+
+  const loginData = [
+    { name: "google", img: google, className: "Google", goLogin: handleLogin },
+    {
+      name: "github",
+      img: githubImg,
+      className: "Github",
+      goLogin: handleLogin,
+    },
+    {
+      name: "facebook",
+      img: facebookImg,
+      className: "Facebook",
+      goLogin: handleLogin,
+    },
+    {
+      name: "nonMember",
+      img: userImg,
+      className: "nonMember",
+      goLogin: authLogin,
+    },
+  ];
+  const history = useHistory();
+  const [loginInfo] = useState(null);
+  // console.log(props.authService, "login");
 
   //loginInfo값이 바뀌면 goVIsitor에 인자로 값을 넣어 실행한다.
   // useEffect(() => {
@@ -40,8 +51,22 @@ const VisitorLogin = (props) => {
   // }, [goVisitor, loginInfo]);
 
   // 만약에 loginInfo가 있다면 리스트로 이동한다.(uid를 가지고 )
+  const goVisitor = useCallback(
+    (item) => {
+      history.push({
+        pathname: "/visitor/list",
+        state: { id: item },
+      });
+    },
+    [history]
+  );
+
+  ////다른 menu를 클릭하고 돌아왔을 때도 로그인 유지하기 위해 useEffect실행
+  ///이 페이지가 마운트가 될때마다 onAuthChange함수를 실행하여 콜백함수를 인자로 보낸다.
+  /////govisitor가 되면서 실행
+
   useEffect(() => {
-    // console.log(loginInfo, "4");
+    console.log("onAuthChange<<<<<<<");
     props.authService.onAuthChange(
       (user) => {
         user && goVisitor(user.uid);
@@ -55,40 +80,19 @@ const VisitorLogin = (props) => {
       <img src={computer} alt="computer" className="computerImg" />
       <div className="visitor_header">발자취 남기기</div>
       <div className="visitor_btn_container">
-        <div className="google_container">
-          <img
-            src={google}
-            alt="google"
-            className="Google"
-            onClick={handleLogin}
-          />
-        </div>
-        <div className="github_container">
-          <img
-            src={githubImg}
-            alt="githubImg"
-            className="Github"
-            onClick={handleLogin}
-          />
-        </div>
-        <div className="facebook_container">
-          <img
-            src={facebookImg}
-            alt="facebookImg"
-            className="Facebook"
-            onClick={handleLogin}
-          />
-        </div>
-        <div className="nonMember_container">
-          <img
-            src={userImg}
-            alt="userImg"
-            onClick={authLogin}
-            className="nonMember_icon"
-          />
-        </div>
+        {loginData.map((item) => {
+          return (
+            <div className={`${item.name}_container`} key={item.name}>
+              <img
+                src={item.img}
+                alt={`${item.img}`}
+                className={`${item.className}`}
+                onClick={item.goLogin}
+              />
+            </div>
+          );
+        })}
       </div>
-      {/* <button onClick={() => console.log(loginInfo)}>버튼</button> */}
     </div>
   );
 };

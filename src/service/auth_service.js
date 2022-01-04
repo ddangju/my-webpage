@@ -58,12 +58,13 @@ class AuthService {
   // 콜백함수로 들어온 change함수에 사용자정보를 업데이트.
   ///onAuthStateChanged() 사용자가 로그인인지 로그아웃인지 확인가능
   onAuthChange(change) {
-    // console.log("5");
     const auth = getAuth(firebaseApp);
+    ////사용자정보에는 로그인한 정보가 들어온다.
     onAuthStateChanged(auth, (사용자정보) => {
-      // console.log(사용자정보);
+      console.log(사용자정보, "사용자정보");
       change(사용자정보);
       // 사용자가바뀔때실행(사용자정보);
+      console.log(change, "change");
     });
   }
 }

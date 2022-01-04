@@ -13,7 +13,7 @@ class CardRepository {
       // console.log(snapshot, "<<<<<<<");
       // console.log(snapshot.val(), "<<<<<<<");
       const value = snapshot.val();
-      console.log(value, "<<<<");
+      // console.log(value, "<<<<");
       value && onUpdate(value);
     });
     // onValue(dataRef, (snapshot) => {
