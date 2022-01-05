@@ -78,7 +78,7 @@ const VisitorLogin = (props) => {
   return (
     <div className="visitor_login_container">
       <img src={computer} alt="computer" className="computerImg" />
-      <div className="visitor_header">발자취 남기기</div>
+      {/* <div className="visitor_header">방명록</div> */}
       <div className="visitor_btn_container">
         {loginData.map((item) => {
           return (

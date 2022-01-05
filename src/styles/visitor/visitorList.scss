@@ -1,35 +1,70 @@
 @import "../common/common.scss";
 
 .visitorList_container {
-  background-color: rgb(255, 244, 244);
+  // background-color: rgb(255, 244, 244);
+  // background-color: white;
+  background-color: yellow;
+  border-radius: 10px;
   width: 100%;
-  height: 94%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .visitorList_Header {
-    background-color: rgb(255, 168, 212);
+  .visitorList_header {
+    // background-color: rgb(255, 168, 212);
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #5b2828;
     width: 100%;
     height: 10%;
+    position: relative;
+    .visitor_img_box {
+      position: absolute;
+      display: flex;
+      // width: 50%;
+      left: 40%;
+      height: 100%;
+      // justify-content: flex-end;
+      // flex-direction: row;
+      // align-items: center;
+      .visitorList_context {
+        font-size: 2rem;
+        align-self: center;
+        font-weight: 600;
+      }
+      .chatImg {
+        color: blue;
+        width: 30%;
+      }
+    }
+    .logoutBtn {
+      align-self: center;
+      font-size: 1.5rem;
+      position: relative;
+      left: 90%;
+      cursor: pointer;
+    }
   }
   .visitorList_list_container {
     width: 95%;
     height: 35%;
-    // background-color: khaki;
+    // border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    // margin-top: 1em;
+    margin: 1em 0em;
     display: flex;
     padding: 0.5em;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    background-color: white;
     .user_img_container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 15%;
       height: 90%;
+      padding: 0.5em;
       .userImgFile {
         display: none;
       }
@@ -75,8 +110,10 @@
           border-bottom: 0.1em solid rgb(90, 90, 90);
           font-size: 1em;
         }
+
         .user_title {
           height: 80%;
+          font-size: 1em;
           width: 50%;
           background-color: $input-color;
           border: $none-style;
@@ -85,6 +122,10 @@
         .theme {
           height: 60%;
           width: 20%;
+        }
+        .user_name:focus,
+        .user_title:focus {
+          background-color: rgb(255, 249, 197);
         }
       }
       .textarea_container {
@@ -101,13 +142,17 @@
         .user_textarea:focus {
           border: none;
           outline: none;
+          background-color: rgb(255, 249, 197);
           // width: 70%;
         }
         .user_submit {
           margin-top: 1em;
           width: 20%;
           height: 30%;
-          border: 1px solid #c1a1a1;
+          background-color: #5b2828;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;
         }
       }
     }
@@ -115,8 +160,9 @@
     }
   }
   .visitorList_preview {
-    background-color: white;
+    background-color: #9bbad8;
     // overflow: scroll;
+    border-radius: 10px;
     overflow: auto;
     width: 95%;
     height: 55%;
@@ -129,19 +175,22 @@
       display: flex;
       align-items: center;
       margin: 1em 0em;
-      background-color: rgb(255, 205, 205);
+      // background-color: rgb(255, 205, 205);
       border-radius: 0.5em;
       justify-content: space-around;
       .dark {
-        background-color: rgb(50, 255, 238);
+        // background-color: rgb(50, 255, 238);
       }
       .cardImgContainer {
+        background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 10%;
         align-items: center;
         height: 80%;
+        border-radius: 1em;
+        padding: 0.5em;
         .cardImg {
           width: 5rem;
           height: 5rem;
@@ -155,9 +204,10 @@
       }
 
       .user_card {
+        background-color: white;
         width: 85%;
         height: 70%;
-        background-color: rgb(255, 255, 255);
+        padding: 0.5em;
         display: flex;
         flex-direction: column;
         justify-content: space-around;

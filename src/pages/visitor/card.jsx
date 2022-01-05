@@ -27,9 +27,10 @@ function Card({ item }) {
         <div className="user_name">{nameRef}</div>
       </div>
       <div className="user_card">
-        <div>{today}</div>
         <div className="user_title">{titleRef}</div>
         <div className="user_message">{textareaRef}</div>
+        <div>Date.{today}</div>
+
         {/* <div className="user_fileName">{fileName}</div> */}
       </div>
     </div>

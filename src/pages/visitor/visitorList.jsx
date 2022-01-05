@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router";
 import CardList from "./cardList";
 import "../../styles/visitor/visitorList.scss";
+import chatImg from "../../images/chat.svg";
 
 const VisitorList = ({ cardRepository, authService, imgChange }) => {
   // console.log(props);
@@ -22,18 +23,28 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   ///updated의 card.id라는 key 값에 접근하여 card를 할당해준다
   ///{1640610742929 : card}
   const addCard = (card) => {
-    // console.log(card, "cards");
-    setCards((cards) => {
-      // console.log(cards, "cards");
-      const updated = { ...cards };
-      // console.log(updated, "<<<<<1");
-      updated[card.id] = card;
-      // console.log(card, "<<<<<2");
+    // console.log(card, "나 입력한 카드");
 
+    setCards((cards) => {
+      // console.log(cards, "state 카드가 들어옴");
+
+      const updated = { ...cards };
+      // console.log(updated, "state 카드를 변수에 저장");
+
+      updated[card.id] = card;
+
+      // console.log(
+      //   updated[card.id],
+      //   "state로 저장한 카드에 입력한 카드의 아이디에 카드를 저장"
+      // );
+
+      // console.log(updated, "리턴하는 updated");
       return updated;
     });
+
     ///usrId는 사용자가 입력한 아이디, card는 입력한 카드의 값
-    cardRepository.saveCard(userId, card);
+    cardRepository.saveCard(card);
+    // console.log("<<<<<<<<<<<<<<<<");
   };
 
   const fileUpload = (file) => {
@@ -42,14 +53,19 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
       fileName: file.name,
       fileURL: file.url,
     });
+    console.log(file, "나파일");
+    setFile({ fileName: null, fileURL: null });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     const date = new Date();
     const year = String(date.getFullYear());
-    const month = String(date.getMonth() + 1);
-    const day = String(date.getDate());
+    let month = String(date.getMonth() + 1);
+    let day = String(date.getDate());
+
+    month = month.padStart(2, "0");
+    day = day.padStart(2, "0");
     const today = year + month + day;
     const userCard = {
       id: Date.now(),
@@ -61,6 +77,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
       fileName: file.fileName || "",
       fileURL: file.fileURL || "",
     };
+    // console.log(userCard, "userCard");
     formRef.current.reset();
     addCard(userCard);
     // console.log("클릭했음");
@@ -91,10 +108,12 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     });
   };
 
+  const onFileEdit = () => {};
+
   ///만약에 user 내용이 없다면 visitor로 돌려보낸다.
   useEffect(() => {
     authService.onAuthChange((user) => {
-      console.log(user, "visitorList");
+      // console.log(user, "visitorList");
       // console.log("uid", user);
       if (user) {
         setUserId(user.uid);
@@ -115,16 +134,22 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     // });
 
     const stopSync = cardRepository.syncCard((cards) => {
+      // console.log("sync");
       setCards(cards);
     });
     return () => stopSync();
-  }, []);
+  }, [cardRepository, userId]);
   // console.log("file>>>>", file);
   return (
     <>
       <div className="visitorList_container">
-        <div className="visitorList_Header">
-          <div className="visitorList_context">방명록</div>
+        <div className="visitorList_header">
+          <div className="visitor_img_box">
+            <div className="visitorList_context">소곤소곤</div>
+            <img src={chatImg} alt="chatImg" className="chatImg" />
+          </div>
+          {/* <div className="visitorList_Header">
+          <div className="visitorList_context">방명록</div> */}
           <div className="logoutBtn" onClick={onLogout}>
             logout
           </div>
@@ -148,6 +173,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
               <img src={file.fileURL} alt="phot" />
             )}
           </div>
+          <div onClick={onFileEdit}>edit</div>
           <div className="user_editor_container">
             <div className="user_editor_name_title">
               <input

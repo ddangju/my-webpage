@@ -31,7 +31,7 @@ class CardRepository {
 
   ///입력한 카드 값을 db에 저장하여 사용자를 추가한다.
   saveCard(card) {
-    // console.log(set(), "<<<<<");
+    // console.log(card, "<<<<<");
     const database = getDatabase(firebaseApp);
     set(ref(database, `cards/${card.id}`), card);
     // set(ref(database, `hello/user`), card);
