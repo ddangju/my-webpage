@@ -1,22 +1,18 @@
+@import "../common/common.scss";
+
 .todoContainer {
-  width: 100%;
-  height: 100%;
-  animation-duration: 300ms;
+  @include container;
+
   .todo-main-canvas {
     background: white;
     width: 55%;
     height: 75%;
     margin-top: 6%;
     margin-left: 15%;
-    border-style: solid;
-    border-width: 3px 3px 3px 3px;
-    border-color: rgba(240, 248, 255, 0.918) black black
-      rgba(240, 248, 255, 0.918);
+    @include outline-canvas;
+
     .todo-canvas-top {
-      width: 100%;
-      height: 5%;
-      background-color: #2149cc;
-      margin: 0;
+      @include canvas-top-styling;
     }
     .todo_list_Container {
       width: 100%;
@@ -25,7 +21,12 @@
       flex-direction: column;
       align-items: center;
       overflow: auto;
+      background-color: #ffefd7;
+
+      @include canvas-main;
+
       .inputTitle {
+        color: #ff4747;
         font-size: 2em;
         height: 20%;
         display: flex;
@@ -39,25 +40,28 @@
         margin-bottom: 1em;
         height: 10%;
         width: 50%;
+        align-items: flex-end;
         .inputContainer {
+          padding-left: 3%;
           font-size: 1.2em;
           width: 80%;
           margin-right: 1em;
-          /* border-bottom: 1px solid black; */
           background: transparent;
+          // background-color: #a2c3ff75;
           border: none;
-          border-bottom: 1px solid black;
+          border-bottom: 2px solid #9f9f9f;
         }
         .listSubmit {
           cursor: pointer;
-          background-color: rgb(233, 248, 191);
+          background-color: blue;
           border: none;
           width: 20%;
           height: 65%;
+          color: yellow;
           box-shadow: 3px 5px 0 rgba(34, 34, 34, 0.5);
         }
         .listSubmit:hover {
-          background-color: rgb(226, 255, 119);
+          background-color: #99bbfa;
         }
         .listSubmit:active {
           box-shadow: 1px 1px 0 rgba(34, 34, 34, 0.5);
@@ -66,16 +70,20 @@
         }
 
         .inputContainer:focus {
-          background-color: rgba(249, 255, 224, 0.726);
+          background-color: rgba(255, 255, 255, 0.726);
         }
       }
 
       .listContainer {
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid #ff4747db;
         width: 50%;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
         height: 70%;
+        padding: 3%;
         .list-list {
           display: flex;
           width: 100%;
@@ -86,7 +94,7 @@
             position: relative;
             margin-right: 0.5em;
             font-size: 1.6em;
-            border-bottom: 0.5px solid black;
+            border-bottom: 2px solid #bed9fc;
             padding-bottom: 0.2em;
 
             .imgContainer {

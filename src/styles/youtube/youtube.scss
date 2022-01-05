@@ -1,38 +1,27 @@
+@import "../common/common.scss";
+// @include test;
+
 .youtubeLogin {
-  width: 100%;
-  height: 100%;
-  animation-duration: 300ms;
+  @include container;
+
   .youtube-main-canvas {
     background: white;
     width: 50%;
     height: 70%;
-    border-style: solid;
-    border-width: 5px;
-    border-color: rgba(240, 248, 255, 0.918) rgb(73, 73, 73) rgb(83, 83, 83)
-      rgba(240, 248, 255, 0.918);
+    @include outline-canvas;
     margin-top: 6%;
     margin-left: 15%;
   }
   .youtube-canvas-top {
-    background-color: #c9c9c9;
-    border-radius: 5px;
-    width: 100%;
-    height: 6%;
-    border: 2px solid #c1b5b5;
-    margin-bottom: 0.3%;
+    @include canvas-top-styling;
   }
   .login {
+    background-color: #c9c6ff;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 94%;
-    background-color: #c9c6ff;
-    border-radius: 10px;
-    border-width: 1px 2px 2px 1px;
-    border-color: #c1b5b5;
-    border-style: solid;
-    justify-content: center;
+    @include canvas-main;
     padding: 3em;
 
     .youtubeGif {

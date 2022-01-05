@@ -47,11 +47,11 @@ const Todo = () => {
           <Icons />
         </div>
         <div className="todo_list_Container">
-          <div className="inputTitle">오늘 할 일!</div>
+          <div className="inputTitle">TO DO LIST!</div>
           <div className="formContainer">
             <input
               className="inputContainer"
-              placeholder="무엇을?"
+              // placeholder="무엇을?"
               value={text}
               onChange={(e) => setText(e.target.value)}
               onKeyUp={pressEnter}

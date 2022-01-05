@@ -1,3 +1,35 @@
 $markerRed: red;
 $input-color: transparent;
 $none-style: none;
+
+@mixin container {
+  width: 100%;
+  height: 100%;
+  animation-duration: 300ms;
+}
+
+@mixin canvas-top-styling {
+  background-color: #c9c9c9;
+  border-radius: 5px;
+  width: 100%;
+  height: 5%;
+  border: 2px solid #c1b5b5;
+  margin-bottom: 0.3%;
+}
+
+@mixin canvas-main {
+  width: 100%;
+  height: 94%;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px 4px 4px 3px;
+  border-color: #c1b5b5;
+}
+
+@mixin outline-canvas {
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 5px;
+  border-color: rgba(240, 248, 255, 0.918) rgb(73, 73, 73) rgb(83, 83, 83)
+    rgba(240, 248, 255, 0.918);
+}
