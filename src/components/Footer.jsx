@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/footer.scss";
 import bottomPhoto from "../images/badge.png";
 import Modal from "../components/modal";
-import { useState } from "react/cjs/react.development";
 
 const Footer = () => {
   const [show, setShow] = useState(false);
