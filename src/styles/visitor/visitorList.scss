@@ -190,8 +190,6 @@
         }
       }
     }
-    .user_submit {
-    }
   }
   .visitorList_preview {
     background-color: #9bbad8;
@@ -216,9 +214,7 @@
       @media #{$desktop-max-size} {
         height: 30%;
       }
-      .dark {
-        // background-color: rgb(50, 255, 238);
-      }
+
       .cardImgContainer {
         background-color: white;
         display: flex;
@@ -259,10 +255,6 @@
         .user_title {
           font-size: 1.1em;
           font-weight: 700;
-        }
-        .user_message {
-        }
-        .user_fileName {
         }
       }
     }

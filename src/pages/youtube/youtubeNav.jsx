@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState, memo } from "react";
+import React, { useRef, memo } from "react";
 import "../../styles/youtube/youtubeNav.scss";
 import { useHistory, Link } from "react-router-dom";
-import search from "../../images/search.png";
 import logo from "../../images/logo.png";
 
 const YoutubeNav = memo((props) => {
@@ -9,7 +8,6 @@ const YoutubeNav = memo((props) => {
   console.log(props.user);
   let inputRef = useRef();
   const history = useHistory();
-  const [name, setName] = useState();
 
   const handleSearch = (e) => {
     const value = inputRef.current.value;
