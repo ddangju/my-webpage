@@ -1,3 +1,5 @@
+@import "./common/size.scss";
+
 .bottom_section {
   background-color: markerBlack;
   width: 100%;
@@ -26,6 +28,9 @@
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  @media #{$desktop-middle-size} {
+    width: 10%;
+  }
 }
 
 .bottom-inner-image {
@@ -39,4 +44,7 @@
 .bottom-inner-start {
   font-weight: 900;
   margin-left: 5%;
+  @media #{$desktop-max-size} {
+    font-size: 13px;
+  }
 }

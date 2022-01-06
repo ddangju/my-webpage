@@ -1,17 +1,26 @@
+@import "../common/size.scss";
+
 .videoContainer {
   width: 100%;
   padding: 0.2em;
   margin-bottom: 1em;
+  @media #{$desktop-max-middle-size} {
+    width: 100%;
+    height: 6em;
+  }
 
   .videoElements {
     background-color: white;
     width: 100%;
     height: 100%;
     display: flex;
-    // align-items: center;
     border: 1px solid lightgray;
     cursor: pointer;
     box-shadow: 8px 9px 4px -3px #9e9e9e;
+
+    @media #{$desktop-max-size} {
+      // height: 70%;
+    }
     .video {
       width: 40%;
       height: 100%;
@@ -26,13 +35,25 @@
       margin-left: 30px;
       padding-top: 1em;
       padding-right: 0.5em;
+      height: 100%;
       .title {
+        height: 60%;
+        width: 100%;
         font-size: 1em;
         font-weight: bolder;
         margin-bottom: 0.8em;
+        line-height: 25px;
+        white-space: pre-wrap;
+        @media #{$desktop-max-size} {
+          font-size: 0.9em;
+          overflow: hidden;
+        }
       }
       .channel {
         font-size: 1em;
+        @media #{$desktop-max-size} {
+          font-size: 0.9em;
+        }
       }
     }
   }
@@ -44,4 +65,7 @@
 }
 .grid {
   width: 50%;
+  @media #{$desktop-max-middle-size} {
+    width: 100%;
+  }
 }

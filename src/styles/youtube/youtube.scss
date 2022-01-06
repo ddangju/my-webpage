@@ -1,16 +1,28 @@
 @import "../common/common.scss";
-// @include test;
+@import "../common/size.scss";
 
 .youtubeLogin {
   @include container;
 
   .youtube-main-canvas {
     background: white;
-    width: 50%;
+    width: 60%;
     height: 70%;
     @include outline-canvas;
     margin-top: 6%;
     margin-left: 15%;
+    @media #{$desktop-max-size} {
+      width: 70%;
+      height: 60%;
+    }
+    @media #{$desktop-max-middle-size} {
+      // width: 70%;
+      height: 50%;
+    }
+    @media #{$desktop-middle-small-size} {
+      // width: 70%;
+      height: 45%;
+    }
   }
   .youtube-canvas-top {
     @include canvas-top-styling;
@@ -26,7 +38,7 @@
 
     .youtubeGif {
       width: 50%;
-      height: 50%;
+      height: 60%;
     }
     .youtubeLogo {
       width: 10%;

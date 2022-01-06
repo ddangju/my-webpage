@@ -1,3 +1,4 @@
+@import "./styles/common/common.scss";
 .App {
   width: 100vw;
   height: 100vh;
@@ -28,4 +29,18 @@
       display: flex;
     }
   }
+}
+
+// @media only screen and (max-width: 1024px) {
+//   // .App {
+//   //   background-color: rgb(159, 167, 168);
+//   // }
+// }
+@media screen and (max-width: 1200px) {
+  ////스타일링
+  // @include desktop;
+}
+@media screen and (max-width: 768px) {
+  ////스타일링
+  // @include desktop;
 }

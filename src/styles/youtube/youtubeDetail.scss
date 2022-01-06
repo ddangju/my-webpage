@@ -1,19 +1,49 @@
+@import "../common/size.scss";
+
 .detail {
   .detailContainer {
     display: flex;
     justify-content: center;
+    width: 100%;
+    background-color: white;
+
+    @media #{$desktop-middle-size} {
+      // width: 80%;
+      // align-items: center;
+    }
     .detailVideoContainer {
-      width: 70%;
-      background-color: white;
-      padding: 50px;
+      width: 50%;
+      background-color: #f9f9f9;
+      padding: 3%;
+
+      @media #{$desktop-middle-size} {
+        width: 80%;
+      }
       iframeContainer {
         .ytp-cued-thumbnail-overlay-image {
           background-size: contain;
+          // width: 50%;
         }
       }
+      .playerContainer {
+        // background-color: rgb(233, 190, 190);
+        margin-top: 5%;
+        line-height: 200%;
 
-      pre {
-        white-space: pre-wrap;
+        .playerHeader {
+          font-size: 1.3em;
+          padding-bottom: 1em;
+          font-weight: 700;
+        }
+        .playerTitle {
+          font-size: 1.1em;
+          border-bottom: 1px solid rgb(156, 156, 156);
+          padding-bottom: 1em;
+        }
+        .playerPre {
+          padding-top: 2em;
+          white-space: pre-wrap;
+        }
       }
     }
   }
@@ -23,8 +53,12 @@
     .detailContainer {
       display: flex;
       flex-direction: column;
+
+      @media #{$desktop-middle-size} {
+        align-items: center;
+      }
       .detailVideoContainer {
-        width: 100%;
+        width: 80%;
       }
     }
   }

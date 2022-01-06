@@ -1,0 +1,17 @@
+// @mixin mediaQuery {
+//   background-color: red;
+// }
+
+$breakpoint-desktop: 70%;
+$breakpoint-desktop2: 1200px;
+
+@mixin desktop {
+  @media screen and(max-width: $breakpoint-desktop2) {
+    width: $breakpoint-desktop;
+  }
+}
+
+$desktop-max-size: "screen and(max-width:1200px)";
+$desktop-max-middle-size: "screen and(max-width:1024px)";
+$desktop-middle-size: "screen and(max-width:920px)";
+$desktop-middle-small-size: "screen and(max-width:768px)";

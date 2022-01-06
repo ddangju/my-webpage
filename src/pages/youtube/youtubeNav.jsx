@@ -5,6 +5,8 @@ import search from "../../images/search.png";
 import logo from "../../images/logo.png";
 
 const YoutubeNav = memo((props) => {
+  console.log("nav");
+  console.log(props.user);
   let inputRef = useRef();
   const history = useHistory();
   const [name, setName] = useState();
@@ -30,19 +32,20 @@ const YoutubeNav = memo((props) => {
     });
   };
 
-  const inputValue = props.user;
+  // const inputValue = props.user;
 
-  localStorage.setItem("id", JSON.stringify(inputValue));
-  useEffect(() => {
-    // console.log("nav>>>로컬", [inputValue]);
-    const saved = localStorage.getItem("id");
-    if (saved !== null) {
-      setName(saved);
-    }
-    // if (saved === "") {
-    //   setName("사용자");
-    // }
-  }, [inputValue]);
+  // localStorage.setItem("id", JSON.stringify(inputValue));
+  // useEffect(() => {
+  //   console.log("4");
+  //   const saved = localStorage.getItem("id");
+  //   if (saved !== null) {
+  //     setName(saved);
+  //   }
+  //   // console.log(name, "name");
+  //   // if (saved === "") {
+  //   //   setName("사용자");
+  //   // }
+  // }, [inputValue]);
   return (
     <div className="navContainer_youtube">
       <div className="logoContainer" onClick={goMain}>
@@ -65,7 +68,7 @@ const YoutubeNav = memo((props) => {
         /> */}
       </div>
 
-      <p className="userName">{name}님, 안녕하세요!</p>
+      <p className="userName">{props.user}님, 안녕하세요!😀</p>
       <Link to="/" className="homeLink">
         <i className="fas fa-home homeIcon"></i>
       </Link>

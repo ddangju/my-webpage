@@ -49,9 +49,13 @@ const YoutubeDetail = (props) => {
             frameBorder="0"
             allowFullScreen
           ></iframe>
-          <h2>{selected.snippet.title}</h2>
-          <h3>{selected.snippet.channelTitle}</h3>
-          <pre>{selected.snippet.description}</pre>
+          <div className="playerContainer">
+            <h2 className="playerHeader">{selected.snippet.title}</h2>
+            <h3 className="playerTitle">
+              📺채널명 : {selected.snippet.channelTitle}
+            </h3>
+            <pre className="playerPre">{selected.snippet.description}</pre>
+          </div>
         </div>
         <VideoList
           video={video}

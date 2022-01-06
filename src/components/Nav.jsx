@@ -12,27 +12,27 @@ const Nav = () => {
       <div className="imgContainer">
         <Link to="/intro" className="linkImg2">
           <div className="imgElement">
-            <img className="img" src={photo1} alt="사진" />
-            <p>Introduce</p>
+            <img className="lingImg" src={photo1} alt="사진" />
+            <p className="nav_menu">Introduce</p>
           </div>
         </Link>
 
         <Link to="/todo" className="linkImg2">
           <div className="imgElement">
-            <img src={photo6} alt="사진" />
-            <p>TotoList</p>
+            <img className="lingImg" src={photo6} alt="사진" />
+            <p className="nav_menu">TotoList</p>
           </div>
         </Link>
         <Link to="/youtube" className="linkImg2">
           <div className="imgElement">
-            <img src={photo4} alt="사진" />
-            <p>Youtube</p>
+            <img className="lingImg" src={photo4} alt="사진" />
+            <p className="nav_menu">Youtube</p>
           </div>
         </Link>
         <Link to="/visitor" className="linkImg2">
           <div className="imgElement">
-            <img src={photo3} alt="사진" />
-            <p>Visitor</p>
+            <img className="lingImg" src={photo3} alt="사진" />
+            <p className="nav_menu">Visitor</p>
           </div>
         </Link>
       </div>

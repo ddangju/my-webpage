@@ -1,3 +1,5 @@
+@import "./size.scss";
+
 $markerRed: red;
 $input-color: transparent;
 $none-style: none;
@@ -33,3 +35,9 @@ $none-style: none;
   border-color: rgba(240, 248, 255, 0.918) rgb(73, 73, 73) rgb(83, 83, 83)
     rgba(240, 248, 255, 0.918);
 }
+
+// @mixin desktop {
+//   @media screen and(max-width: $breakpoint-desktop2) {
+//     width: $breakpoint-desktop;
+//   }
+// }

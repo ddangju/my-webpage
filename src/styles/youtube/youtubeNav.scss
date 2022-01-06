@@ -1,7 +1,9 @@
+@import "../common/size.scss";
+
 .navContainer_youtube {
   // background-color: rgb(0, 0, 0);
   background-color: white;
-  border-bottom: 1px solid #c7c5c5;
+  border-bottom: 2px solid #ededed;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -13,9 +15,13 @@
     align-items: center;
     cursor: pointer;
     .logo_youtube {
-      font-size: 2em;
+      font-size: 2.3em;
       font-weight: bolder;
       margin-left: 0.3em;
+      letter-spacing: -3px;
+      @media #{$desktop-max-size} {
+        font-size: 2em;
+      }
     }
   }
   .searchContainer {
@@ -32,10 +38,18 @@
       padding: 1em;
       font-size: 1.3em;
       margin-right: 1%;
+
+      @media #{$desktop-max-size} {
+        padding: 0.5em;
+        height: 85%;
+      }
     }
     .searchImg2 {
       font-size: 2em;
       cursor: pointer;
+      @media #{$desktop-max-size} {
+        font-size: 1.5em;
+      }
     }
   }
   // .searchImg {
@@ -43,13 +57,21 @@
   //   cursor: pointer;
   // }
   .userName {
-    width: 15%;
+    width: 20%;
     display: flex;
     justify-content: flex-end;
-    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    font-size: 1.2em;
+    font-weight: 900;
+    @media #{$desktop-max-size} {
+      font-size: 1em;
+    }
+    @media #{$desktop-middle-size} {
+      font-size: 0.8em;
+    }
   }
   .homeLink {
-    width: 10%;
+    width: 5%;
     display: flex;
     justify-content: flex-end;
     .homeIcon {

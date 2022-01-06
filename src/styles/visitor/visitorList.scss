@@ -31,6 +31,9 @@
         font-size: 2rem;
         align-self: center;
         font-weight: 600;
+        @media #{$desktop-middle-small-size} {
+          font-size: 1.5em;
+        }
       }
       .chatImg {
         color: blue;
@@ -43,6 +46,16 @@
       position: relative;
       left: 90%;
       cursor: pointer;
+
+      @media #{$desktop-max-size} {
+        left: 85%;
+      }
+      @media #{$desktop-middle-size} {
+        font-size: 1.3rem;
+      }
+      @media #{$desktop-middle-small-size} {
+        font-size: 1rem;
+      }
     }
   }
   .visitorList_list_container {
@@ -53,51 +66,70 @@
     // margin-top: 1em;
     margin: 1em 0em;
     display: flex;
-    padding: 0.5em;
+    padding: 0.5em 2em;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     background-color: white;
-    .user_img_container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .user_img_edit_container {
       width: 15%;
-      height: 90%;
-      padding: 0.5em;
-      .userImgFile {
-        display: none;
+      height: 100%;
+      // background-color: blue;
+      .user_img_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5em;
+        height: 80%;
+        .userImgFile {
+          display: none;
+        }
+        .loading {
+          width: 100%;
+          height: 63%;
+          border-radius: 50%;
+          border: 3px solid grey;
+          border-top: 1px solid rgb(252, 179, 191);
+          animation: spin 2s linear infinite;
+        }
+
+        .user_editor_img {
+          // width: 15%;
+          // height: 60%;
+
+          height: 60%;
+          background-color: rgb(245, 156, 156);
+        }
+        .imgBtn {
+          height: 100%;
+          background-color: white;
+          border: 2px dashed #acabab;
+          // border: dashed red;
+          // border: none;
+          cursor: pointer;
+
+          @media #{$desktop-max-size} {
+            font-size: 10px;
+          }
+        }
       }
-      .loading {
+      .editBtn {
         width: 100%;
-        height: 63%;
-        border-radius: 50%;
-        border: 3px solid grey;
-        border-top: 1px solid rgb(252, 179, 191);
-        animation: spin 2s linear infinite;
-      }
-
-      .user_editor_img {
-        // width: 15%;
-        // height: 60%;
-
-        height: 60%;
-        background-color: rgb(245, 156, 156);
-      }
-      .imgBtn {
-        height: 15%;
+        text-align: center;
+        cursor: pointer;
+        // background-color: #5b2828;
       }
     }
     .user_editor_container {
       width: 85%;
       height: 100%;
       display: flex;
-      padding: 0.5em;
       flex-direction: column;
-      align-items: center;
+      // align-items: center;
+      align-items: flex-end;
       .user_editor_name_title {
         align-items: center;
-        width: 100%;
+        width: 90%;
         height: 30%;
         display: flex;
         justify-content: space-between;
@@ -107,8 +139,9 @@
           width: 20%;
           background-color: $input-color;
           border: $none-style;
-          border-bottom: 0.1em solid rgb(90, 90, 90);
+          border-bottom: 0.1em solid rgb(189, 185, 185);
           font-size: 1em;
+          padding: 1em;
         }
 
         .user_title {
@@ -117,7 +150,8 @@
           width: 50%;
           background-color: $input-color;
           border: $none-style;
-          border-bottom: 0.1em solid rgb(90, 90, 90);
+          border-bottom: 0.1em solid rgb(189, 185, 185);
+          padding: 1em;
         }
         .theme {
           height: 60%;
@@ -130,7 +164,7 @@
       }
       .textarea_container {
         display: flex;
-        width: 100%;
+        width: 90%;
         height: 70%;
         flex-direction: column;
         // padding-top: 1em;
@@ -178,6 +212,10 @@
       // background-color: rgb(255, 205, 205);
       border-radius: 0.5em;
       justify-content: space-around;
+
+      @media #{$desktop-max-size} {
+        height: 30%;
+      }
       .dark {
         // background-color: rgb(50, 255, 238);
       }
@@ -192,14 +230,18 @@
         border-radius: 1em;
         padding: 0.5em;
         .cardImg {
-          width: 5rem;
-          height: 5rem;
+          height: 70%;
+          width: 100%;
           border-radius: 50%;
         }
         .user_name {
           // height: 20%;
           font-size: 1.2em;
           font-weight: 800;
+
+          @media #{$desktop-max-size} {
+            font-size: 0.8em;
+          }
         }
       }
 

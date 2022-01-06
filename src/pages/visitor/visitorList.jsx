@@ -53,8 +53,8 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
       fileName: file.name,
       fileURL: file.url,
     });
-    console.log(file, "나파일");
-    setFile({ fileName: null, fileURL: null });
+    // console.log(file, "나파일");
+    // setFile({ fileName: null, fileURL: null });
   };
 
   const onSubmit = (e) => {
@@ -108,7 +108,10 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     });
   };
 
-  const onFileEdit = () => {};
+  const onFileEdit = () => {
+    // setFile.fileURL(null);
+    inputRef.current.click();
+  };
 
   ///만약에 user 내용이 없다면 visitor로 돌려보낸다.
   useEffect(() => {
@@ -155,32 +158,32 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
           </div>
         </div>
         <form className="visitorList_list_container" ref={formRef}>
-          <div className="user_img_container">
-            <input
-              type="file"
-              accept="image/*"
-              name="file"
-              ref={inputRef}
-              onChange={onFileChange}
-              className="userImgFile"
-            />
-            {loading && <div className="loading"></div>}
-            {!file.fileURL ? (
-              <button className="imgBtn" onClick={onBtnClick}>
-                사진올리기
-              </button>
-            ) : (
-              <img src={file.fileURL} alt="phot" />
-            )}
+          <div className="user_img_edit_container">
+            <div className="user_img_container">
+              <input
+                type="file"
+                accept="image/*"
+                name="file"
+                ref={inputRef}
+                onChange={onFileChange}
+                className="userImgFile"
+              />
+              {loading && <div className="loading"></div>}
+              {!file.fileURL ? (
+                <button className="imgBtn" onClick={onBtnClick}>
+                  사진올리기
+                </button>
+              ) : (
+                !loading && <img src={file.fileURL} alt="phot" />
+              )}
+            </div>
+            <div className="editBtn" onClick={onFileEdit}>
+              edit
+            </div>
           </div>
-          <div onClick={onFileEdit}>edit</div>
           <div className="user_editor_container">
             <div className="user_editor_name_title">
-              <input
-                className="user_name"
-                placeholder="사용자이름"
-                ref={nameRef}
-              />
+              <input className="user_name" placeholder="이름" ref={nameRef} />
               <input className="user_title" placeholder="제목" ref={titleRef} />
               <select className="theme" ref={selectRef}>
                 <option value="Green">초록색</option>

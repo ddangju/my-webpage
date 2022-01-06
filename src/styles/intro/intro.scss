@@ -1,4 +1,6 @@
+// @import "../common/common.scss";
 @import "../common/common.scss";
+@import "../common/size.scss";
 
 .introContainer {
   overflow-y: hidden;
@@ -12,6 +14,9 @@
     margin-left: 15%;
     background-color: #ffffff;
     @include outline-canvas;
+    // @media #{$desktop-middle-size} {
+    //   height: 70%;
+    // }
 
     .intro-canvas-top {
       @include canvas-top-styling;
@@ -25,6 +30,9 @@
       border-width: 1px 4px 4px 3px;
       border-color: #f9bfbf;
       border-style: solid;
+      @media #{$desktop-middle-size} {
+        flex-direction: column;
+      }
       .selfie_container {
         background-color: #ffffb9;
         width: 35%;
@@ -34,9 +42,24 @@
         align-items: center;
         justify-content: center;
         border-radius: 10px;
+        @media #{$desktop-middle-size} {
+          width: 100%;
+          height: 30%;
+        }
         .selfie2Img {
-          width: 80%;
-          height: 40%;
+          width: 90%;
+          height: 45%;
+          @media #{$desktop-max-middle-size} {
+            height: 20%;
+          }
+          @media #{$desktop-middle-size} {
+            width: 20%;
+            height: 40%;
+          }
+          @media #{$desktop-middle-small-size} {
+            width: 25%;
+            // height: 40%;
+          }
         }
         .selfie_btn_container {
           width: 80%;
@@ -45,14 +68,29 @@
           flex-direction: row;
           align-items: center;
           justify-content: space-evenly;
+          @media #{$desktop-max-middle-size} {
+            height: 10%;
+          }
+          @media #{$desktop-middle-size} {
+            height: 30%;
+          }
           .heartContainer {
             display: flex;
             flex-direction: column;
             align-items: center;
             height: 50%;
+            @media #{$desktop-middle-size} {
+              // height: auto;
+            }
             .selfie_heart {
               font-size: 60px;
               cursor: pointer;
+              @media #{$desktop-max-middle-size} {
+                font-size: 35px;
+              }
+              @media #{$desktop-middle-size} {
+                font-size: 30px;
+              }
             }
             .heart_color {
               color: red;
@@ -62,13 +100,23 @@
             .heart_count {
               font-size: 1.1rem;
               font-weight: 600;
+              @media #{$desktop-max-middle-size} {
+                font-size: 10px;
+              }
+              @media #{$desktop-middle-size} {
+                font-size: 5px;
+              }
             }
           }
           .selfieGithub,
           .selfievelogImg {
-            width: 25%;
+            // width: 25%;
             height: 50%;
             cursor: pointer;
+            @media #{$desktop-middle-size} {
+              width: 10%;
+              // height: auto;
+            }
           }
         }
       }
@@ -79,6 +127,12 @@
         flex-direction: column;
         padding: 3%;
         border: 2px solid #fec6c6;
+        @media #{$desktop-middle-size} {
+          font-size: 13px;
+          overflow: scroll;
+          width: 100%;
+          height: 70%;
+        }
         .contextHeader {
           font-weight: 800;
           font-size: 1.3rem;
@@ -89,6 +143,9 @@
           flex-direction: column;
           height: 60%;
           justify-content: space-evenly;
+          @media #{$desktop-middle-size} {
+            margin-top: 6%;
+          }
           .title-header {
             padding-bottom: 1.5%;
             .context-title {
@@ -102,7 +159,6 @@
         }
       }
     }
-
     .test {
       width: 100%;
       height: 94.5%;
@@ -133,6 +189,9 @@
           text-shadow: 5px 5px 2px #c77d7d;
           color: #24314e;
           padding-top: 3%;
+          @media #{$desktop-max-middle-size} {
+            font-size: 4em;
+          }
         }
         .clickHeader:hover {
           --animation: bounce;
