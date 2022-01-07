@@ -8,9 +8,10 @@ const VideoList = (props) => {
 
   return (
     <ul className={`videos ${displayType}`}>
-      {props.video.map((item) => (
+      {props.video.map((item) => console.log(item, "아이템!!!!!!"))}
+      {props.video.map((item, idx) => (
         <VideoItem
-          key={item.id}
+          key={idx}
           item={item}
           onVideoClick={props.onVideoClick}
           display={props.display}

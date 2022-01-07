@@ -8,15 +8,13 @@ import Youtube from "./service/youtubeService";
 import AuthService from "./service/auth_service";
 import imgUpload from "./service/image_uploader";
 import CardRepository from "./service/card_repository";
-import "./service/firebase";
+import LikeButton from "./service/like_service";
 
 const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_KEY);
 const authService = new AuthService();
 const imgChange = new imgUpload();
 const cardRepository = new CardRepository();
-// const FileInput = (props) => {
-//   <ImageFileInput {...props} imageUpload={imageUpload} />;
-// };
+const likeButton = new LikeButton();
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,6 +23,7 @@ ReactDOM.render(
       authService={authService}
       imgChange={imgChange}
       cardRepository={cardRepository}
+      likeButton={likeButton}
     />
   </React.StrictMode>,
   document.getElementById("root")

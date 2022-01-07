@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Read from "./read";
 import Icons from "../../components/icons";
 
-const Intro = () => {
+const Intro = ({ likeButton }) => {
   return (
     <div className="animate__animated animate__zoomIn introContainer">
       <div className="intro-main-canvas">
@@ -17,7 +17,7 @@ const Intro = () => {
             <IntroMain />
           </Route>
           <Route path="/intro/read">
-            <Read />
+            <Read likeButton={likeButton} />
           </Route>
         </Switch>
       </div>

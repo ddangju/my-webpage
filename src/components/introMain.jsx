@@ -14,7 +14,7 @@ const IntroMain = () => {
         "animate__fast"
       );
     }
-    console.log(e.target.classList);
+    // console.log(e.target.classList);
   };
   const mouseLeave = (e) => {
     e.currentTarget.classList.remove(

@@ -5,11 +5,12 @@ import VideoList from "../youtube/videoList";
 import YoutubeNav from "../youtube/youtubeNav";
 
 const YoutubeMain = (props) => {
-  console.log("youtubeMain");
   // console.log(props.youtubeKey, ">>>>>>>>>>>>>");
   const [video, setVideo] = useState([]);
   const history = useHistory();
   const state = history.location.state;
+
+  console.log(state, "state!!");
   // console.log(state.inputValue, "나는state");
 
   // const searchList = history.location.state.searchList;
@@ -28,7 +29,7 @@ const YoutubeMain = (props) => {
   const inputValue = state.inputValue;
   localStorage.setItem("id", JSON.stringify(inputValue));
   useEffect(() => {
-    console.log("4");
+    // console.log("4");
     const saved = localStorage.getItem("id");
     if (saved !== null) {
       setUser(saved);
@@ -40,7 +41,7 @@ const YoutubeMain = (props) => {
   }, [inputValue]);
 
   useEffect(() => {
-    console.log("1");
+    // console.log("1");
 
     // console.log("input", [history?.location?.state?.inputValue]);
     // if (localStorage.getItem("id") !== null) {
@@ -58,9 +59,10 @@ const YoutubeMain = (props) => {
   //detail에서 넘어오는 state가 없으면 mostPopular(item)을 set
   //들어오면 youtubekey에 담긴 값을 set
   useEffect(() => {
-    console.log("2");
+    // console.log("2");
 
     if (!state.searchList) {
+      // console.log(state.searchList, "<<<<searchList");
       youtubeKey.mostPopular().then((item) => setVideo(item));
     } else {
       setVideo(state.searchList);
@@ -70,7 +72,7 @@ const YoutubeMain = (props) => {
 
   ///영상을 클릭할 때 실행
   useEffect(() => {
-    console.log("3");
+    // console.log("3");
     // console.log("디테일", [history, selected, user, video, youtubeKey]);
     if (selected) {
       history.push({

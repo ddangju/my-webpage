@@ -12,8 +12,8 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import booting from "./images/booting.png";
 
-function App(props) {
-  const youtubeKey = props.youtube;
+function App({ youtube, authService, imgChange, cardRepository, likeButton }) {
+  const youtubeKey = youtube;
 
   const startBooting = document.getElementsByClassName("bootingImg");
 
@@ -47,13 +47,13 @@ function App(props) {
                   <Main />
                 </Route>
                 <Route path="/intro">
-                  <Intro />
+                  <Intro likeButton={likeButton} />
                 </Route>
                 <Route path="/visitor">
                   <Visitor
-                    authService={props.authService}
-                    imgChange={props.imgChange}
-                    cardRepository={props.cardRepository}
+                    authService={authService}
+                    imgChange={imgChange}
+                    cardRepository={cardRepository}
                   />
                 </Route>
                 <Route exact path="/todo">

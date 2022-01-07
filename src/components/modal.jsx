@@ -4,7 +4,7 @@ import icons1 from "../images/005.png";
 import icons2 from "../images/002.png";
 import icons3 from "../images/007.png";
 
-const Modal = () => {
+const Modal = ({ off }) => {
   return (
     <div>
       <div className="start-container">
@@ -24,7 +24,7 @@ const Modal = () => {
             <img src={icons2} alt="icons" className="icons1" />
             <div className="icon1-text">휴지통</div>
           </div>
-          <div className="four-box">
+          <div className="four-box" onClick={off}>
             <img src={icons1} alt="icons" className="icons1" />
             <div className="icon1-text">시스템 종료</div>
           </div>

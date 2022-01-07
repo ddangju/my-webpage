@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import selfie2 from "../../images/me2.png";
 import githubImg from "../../images/githubIcon.svg";
 import velogImg from "../../images/velogImg.jpg";
+import { useEffect } from "react/cjs/react.development";
 
-const Read = () => {
+const Read = ({ likeButton }) => {
+  // console.log(likeButton, "<<<<<<<라이크버튼");
   const selfTitle = [
     { title: "””『출생』──┼", item: "1992年 12月 6日" },
     { title: "””『직업』──┼", item: "개발자♬" },
@@ -33,6 +35,7 @@ const Read = () => {
       "animate__animated",
       "animate__bounce"
     );
+    likeButton.saveLike(count);
   };
 
   const goGithub = (e) => {
@@ -43,6 +46,16 @@ const Read = () => {
       window.open("https://velog.io/@duswn38");
     }
   };
+
+  useEffect(() => {
+    ///변수 생성
+    const stopSync = likeButton.syncLike((count) => {
+      setCount(count, "count");
+    });
+    ///unmount한다. retunr과 동시에 stopSync()를 호출한다.
+    return () => stopSync();
+  }, [count, likeButton]);
+
   return (
     <div className="readContainer">
       <div className="selfie_container">

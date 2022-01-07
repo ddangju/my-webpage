@@ -4,8 +4,8 @@ import { useHistory, Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 
 const YoutubeNav = memo((props) => {
-  console.log("nav");
-  console.log(props.user);
+  // console.log("nav");
+  // console.log(props.user);
   let inputRef = useRef();
   const history = useHistory();
 

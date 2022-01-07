@@ -17,6 +17,7 @@ const Todo = () => {
   };
 
   const clickSubmit = (e) => {
+    console.log("실행");
     e.preventDefault();
     if (text !== "") {
       let test = [...list];
