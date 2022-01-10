@@ -36,7 +36,7 @@ function Card({ item, cardDelete }) {
           </div>
         </div>
         <div className="user_message">{textareaRef}</div>
-        <div>Date.{today}</div>
+        <div className="user_date">Date.{today}</div>
 
         {/* <div className="user_fileName">{fileName}</div> */}
       </div>

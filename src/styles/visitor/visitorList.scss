@@ -270,7 +270,14 @@
           }
           .deleteBtn {
             cursor: pointer;
+            color: gray;
           }
+          .deleteBtn:hover {
+            color: red;
+          }
+        }
+        .user_date {
+          color: #b1b1b1;
         }
       }
     }
