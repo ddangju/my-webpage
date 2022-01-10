@@ -3,7 +3,7 @@ import defaultIMg from "../../images/react.png";
 
 const DEFAULT_IMAGE = defaultIMg;
 
-function Card({ item }) {
+function Card({ item, cardDelete }) {
   const { nameRef, titleRef, fileURL, fileName, textareaRef, today } = item;
 
   // let year = today.getFullYear();
@@ -19,6 +19,8 @@ function Card({ item }) {
 
   // }
 
+  // console.log(item, "아이템<<<<<<<");
+
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <div className="cardContainer">
@@ -27,7 +29,12 @@ function Card({ item }) {
         <div className="user_name">{nameRef}</div>
       </div>
       <div className="user_card">
-        <div className="user_title">{titleRef}</div>
+        <div className="user_delete">
+          <div className="user_title">{titleRef}</div>
+          <div className="deleteBtn" onClick={() => cardDelete(item)}>
+            삭제
+          </div>
+        </div>
         <div className="user_message">{textareaRef}</div>
         <div>Date.{today}</div>
 

@@ -16,7 +16,6 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   const formRef = useRef();
   const nameRef = useRef();
   const titleRef = useRef();
-  const selectRef = useRef();
   const textareaRef = useRef();
   const inputRef = useRef();
 
@@ -47,6 +46,12 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     // console.log("<<<<<<<<<<<<<<<<");
   };
 
+  const cardDelete = (item) => {
+    // cardRepository.deleteCard(item);
+    // console.log(item, "<<<<<아이템");
+    cardRepository.deleteCard(item);
+  };
+
   const fileUpload = (file) => {
     // console.log("파일업로드");
     setFile({
@@ -72,7 +77,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
       today: today,
       nameRef: nameRef.current.value || "",
       titleRef: titleRef.current.value || "",
-      selectRef: selectRef.current.value,
+      // selectRef: selectRef.current.value,
       textareaRef: textareaRef.current.value || "",
       fileName: file.fileName || "",
       fileURL: file.fileURL || "",
@@ -199,7 +204,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
           </div>
         </form>
         <div className="visitorList_preview">
-          <CardList cards={cards}></CardList>
+          <CardList cards={cards} cardDelete={cardDelete}></CardList>
           {/* <div className="user_name"></div>
           <div className="user_age"></div> */}
         </div>

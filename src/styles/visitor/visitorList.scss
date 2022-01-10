@@ -259,10 +259,18 @@
         justify-content: space-around;
         border-radius: 1em;
         box-shadow: 6px 6px 8px 0px rgba(217, 217, 217, 1);
+        .user_delete {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
 
-        .user_title {
-          font-size: 1.1em;
-          font-weight: 700;
+          .user_title {
+            font-size: 1.1em;
+            font-weight: 700;
+          }
+          .deleteBtn {
+            cursor: pointer;
+          }
         }
       }
     }

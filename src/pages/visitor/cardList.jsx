@@ -1,13 +1,13 @@
 import React from "react";
 import Card from "./card";
 
-const CardList = ({ cards }) => {
+const CardList = ({ cards, cardDelete }) => {
   return (
     <>
       {Object.keys(cards)
         .reverse()
         .map((key) => (
-          <Card item={cards[key]} key={key} />
+          <Card item={cards[key]} key={key} cardDelete={cardDelete} />
         ))}
 
       {/* <Card>
