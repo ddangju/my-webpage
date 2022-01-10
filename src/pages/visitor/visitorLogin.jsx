@@ -8,12 +8,11 @@ import userImg from "../../images/user.svg";
 
 const VisitorLogin = (props) => {
   const handleLogin = (e) => {
-    console.log("로그인실행");
     props.authService.login(e.target.className, goVisitor);
   };
 
   const authLogin = () => {
-    props.authService.nonMember();
+    props.authService.nonMember(goVisitor);
   };
 
   const loginData = [
@@ -53,6 +52,7 @@ const VisitorLogin = (props) => {
   // 만약에 loginInfo가 있다면 리스트로 이동한다.(uid를 가지고 )
   const goVisitor = useCallback(
     (item) => {
+      // console.log(item);
       history.push({
         pathname: "/visitor/list",
         state: { id: item },
@@ -66,7 +66,6 @@ const VisitorLogin = (props) => {
   /////govisitor가 되면서 실행
 
   useEffect(() => {
-    console.log("onAuthChange<<<<<<<");
     props.authService.onAuthChange(
       (user) => {
         user && goVisitor(user.uid);

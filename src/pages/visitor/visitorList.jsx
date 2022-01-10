@@ -8,8 +8,8 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   // console.log(props);
   const history = useHistory();
   let state = history.location.state;
+  console.log("state확인", history.location.state);
   const [userId, setUserId] = useState(state && state.id);
-  // console.log("props확인", history.location.state);
   const [file, setFile] = useState({ fileName: null, fileURL: null });
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState({});
@@ -18,6 +18,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   const titleRef = useRef();
   const textareaRef = useRef();
   const inputRef = useRef();
+  const passwordRef = useRef();
 
   ///updated의 card.id라는 key 값에 접근하여 card를 할당해준다
   ///{1640610742929 : card}
@@ -47,9 +48,11 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   };
 
   const cardDelete = (item) => {
-    // cardRepository.deleteCard(item);
-    // console.log(item, "<<<<<아이템");
-    cardRepository.deleteCard(item);
+    console.log(item);
+    if (item.uid === state.id) {
+      cardRepository.deleteCard(item);
+    }
+    // if(item.password===)
   };
 
   const fileUpload = (file) => {
@@ -74,6 +77,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     const today = year + month + day;
     const userCard = {
       id: Date.now(),
+      uid: state.id,
       today: today,
       nameRef: nameRef.current.value || "",
       titleRef: titleRef.current.value || "",
@@ -81,11 +85,15 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
       textareaRef: textareaRef.current.value || "",
       fileName: file.fileName || "",
       fileURL: file.fileURL || "",
+      password: passwordRef.current.value,
     };
     // console.log(userCard, "userCard");
     formRef.current.reset();
-    addCard(userCard);
-    // console.log("클릭했음");
+    if (userCard.password.length > 3) {
+      addCard(userCard);
+    } else {
+      alert("비밀번호를 확인해주세요");
+    }
   };
 
   const onLogout = () => {
@@ -190,6 +198,13 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
             <div className="user_editor_name_title">
               <input className="user_name" placeholder="이름" ref={nameRef} />
               <input className="user_title" placeholder="제목" ref={titleRef} />
+              {state.id === "guest" ? (
+                <input
+                  className="password"
+                  placeholder="비밀번호"
+                  ref={passwordRef}
+                />
+              ) : null}
               {/* <select className="theme" ref={selectRef}>
                 <option value="Green">초록색</option>
                 <option value="Blue">파랑색</option>

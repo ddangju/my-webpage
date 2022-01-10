@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/nav.scss";
 import photo1 from "../images/001.png";
-import photo3 from "../images/003.png";
+import photo3 from "../images/visitor.png";
 import photo4 from "../images/004.png";
-import photo6 from "../images/006.png";
+import photo6 from "../images/memo.png";
 
 const Nav = () => {
   return (

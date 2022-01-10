@@ -1,14 +1,6 @@
 import { firebaseApp } from "./firebase";
 
-import {
-  getDatabase,
-  set,
-  ref,
-  onValue,
-  off,
-  onChildRemoved,
-  remove,
-} from "firebase/database";
+import { getDatabase, set, ref, onValue, off, remove } from "firebase/database";
 
 class CardRepository {
   //새로운 데이터를 받아오면 콜백함수가 두번재 인자로 전달되고
@@ -46,10 +38,11 @@ class CardRepository {
     // set(ref(database, `hello/user`), card);
   }
   deleteCard(item) {
-    console.log(item, "item");
     const database = getDatabase(firebaseApp);
     const commentRef = ref(database, `cards/${item.id}`);
     remove(commentRef);
+    // mZr8euOXptYLxYlfFmzinWVbTyL2"
+    // //삭제버튼을 누른 item의 uid
 
     // commentRef.removeValue();
     // console.log(item, "<<<<<아이템");

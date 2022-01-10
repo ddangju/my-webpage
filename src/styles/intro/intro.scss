@@ -14,10 +14,7 @@
     margin-left: 15%;
     background-color: #ffffff;
     @include outline-canvas;
-    // @media #{$desktop-middle-size} {
-    //   height: 70%;
-    // }
-
+    transition: all 3s;
     .intro-canvas-top {
       @include canvas-top-styling;
     }

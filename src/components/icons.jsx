@@ -4,7 +4,7 @@ import minizewindow from "../images/windowminimize.png";
 import { Link } from "react-router-dom";
 import "../styles/components/icons.scss";
 
-const Icons = () => {
+const Icons = ({ closeBtn }) => {
   return (
     <>
       <div className="canvas-top-icons">

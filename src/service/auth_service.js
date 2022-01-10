@@ -11,11 +11,12 @@ import {
 } from "firebase/auth";
 
 class AuthService {
-  nonMember() {
+  nonMember(goVisitor) {
     const auth = getAuth(firebaseApp);
     signInAnonymously(auth)
       .then((result) => {
-        console.log(result);
+        // console.log(result, "비회원");
+        goVisitor("guest");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -39,7 +40,7 @@ class AuthService {
     // console.log(provider);
     signInWithPopup(auth, provider)
       .then((result) => {
-        // console.log(result.user.uid, "1");
+        console.log(result, "회원");
         goVisitor(result.user.uid);
       })
       .catch((error) => {

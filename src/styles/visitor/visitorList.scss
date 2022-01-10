@@ -259,6 +259,10 @@
         justify-content: space-around;
         border-radius: 1em;
         box-shadow: 6px 6px 8px 0px rgba(217, 217, 217, 1);
+        @media #{$desktop-middle-small-size} {
+          // font-size: 10px;
+          overflow: scroll;
+        }
         .user_delete {
           display: flex;
           flex-direction: row;
@@ -267,6 +271,13 @@
           .user_title {
             font-size: 1.1em;
             font-weight: 700;
+            @media #{$desktop-max-size} {
+              font-size: 15px;
+            }
+            @media #{$desktop-middle-size} {
+              font-size: 11px;
+              overflow: scroll;
+            }
           }
           .deleteBtn {
             cursor: pointer;
@@ -274,6 +285,11 @@
           }
           .deleteBtn:hover {
             color: red;
+          }
+        }
+        .user_message {
+          @media #{$desktop-max-size} {
+            font-size: 13px;
           }
         }
         .user_date {
