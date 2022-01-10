@@ -20,7 +20,7 @@ const Nav = () => {
         <Link to="/todo" className="linkImg2">
           <div className="imgElement">
             <img className="lingImg" src={photo6} alt="사진" />
-            <p className="nav_menu">TotoList</p>
+            <p className="nav_menu">To Do</p>
           </div>
         </Link>
         <Link to="/youtube" className="linkImg2">

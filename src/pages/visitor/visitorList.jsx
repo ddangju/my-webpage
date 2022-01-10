@@ -185,10 +185,10 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
             <div className="user_editor_name_title">
               <input className="user_name" placeholder="이름" ref={nameRef} />
               <input className="user_title" placeholder="제목" ref={titleRef} />
-              <select className="theme" ref={selectRef}>
+              {/* <select className="theme" ref={selectRef}>
                 <option value="Green">초록색</option>
                 <option value="Blue">파랑색</option>
-              </select>
+              </select> */}
             </div>
             <div className="textarea_container">
               <textarea className="user_textarea" ref={textareaRef}></textarea>

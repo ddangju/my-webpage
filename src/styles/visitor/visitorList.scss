@@ -132,7 +132,7 @@
         width: 90%;
         height: 30%;
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         flex-direction: row;
         .user_name {
           height: 80%;
@@ -142,6 +142,11 @@
           border-bottom: 0.1em solid rgb(189, 185, 185);
           font-size: 1em;
           padding: 1em;
+          margin-right: 5%;
+          padding-bottom: 0;
+          padding-left: 0.5em;
+          // padding: 0 0 0 0.5em;
+          // font-weight: 800;
         }
 
         .user_title {
@@ -152,6 +157,9 @@
           border: $none-style;
           border-bottom: 0.1em solid rgb(189, 185, 185);
           padding: 1em;
+          margin-right: 5%;
+          padding-bottom: 0;
+          padding-left: 0.5em;
         }
         .theme {
           height: 60%;
