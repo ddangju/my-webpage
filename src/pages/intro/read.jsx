@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import selfie2 from "../../images/me2.png";
 import githubImg from "../../images/githubIcon.svg";
 import velogImg from "../../images/velogImg.jpg";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 
 const Read = ({ likeButton }) => {
   // console.log(likeButton, "<<<<<<<라이크버튼");
