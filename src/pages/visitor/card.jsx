@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import defaultIMg from "../../images/react.png";
 
 const DEFAULT_IMAGE = defaultIMg;
@@ -18,6 +18,7 @@ function Card({ item, cardDelete }) {
   //   }
 
   // }
+  const passwordCheck = useRef();
 
   // console.log(item, "아이템<<<<<<<");
 
@@ -31,8 +32,20 @@ function Card({ item, cardDelete }) {
       <div className="user_card">
         <div className="user_delete">
           <div className="user_title">{titleRef}</div>
-          <div className="deleteBtn" onClick={() => cardDelete(item)}>
-            삭제
+          <div className="deleteContainer">
+            {item.password && (
+              <input
+                className="nonmember-password"
+                placeholder="비밀번호"
+                ref={passwordCheck}
+              />
+            )}
+            <div
+              className="deleteBtn"
+              onClick={() => cardDelete(item, passwordCheck.current.value)}
+            >
+              삭제
+            </div>
           </div>
         </div>
         <div className="user_message">{textareaRef}</div>

@@ -161,13 +161,15 @@
           padding-bottom: 0;
           padding-left: 0.5em;
         }
-        .theme {
-          height: 60%;
-          width: 20%;
-        }
         .user_name:focus,
         .user_title:focus {
           background-color: rgb(255, 249, 197);
+        }
+        .deleteContainer {
+          .deleteBtn {
+          }
+          .nonmember-password {
+          }
         }
       }
       .textarea_container {

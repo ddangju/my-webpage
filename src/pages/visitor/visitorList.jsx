@@ -47,12 +47,20 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
     // console.log("<<<<<<<<<<<<<<<<");
   };
 
-  const cardDelete = (item) => {
-    console.log(item);
-    if (item.uid === state.id) {
+  const cardDelete = (item, passwordCheck) => {
+    if (item.password) {
+      guestDelete(passwordCheck, item);
+    } else if (item.uid === state.id) {
       cardRepository.deleteCard(item);
     }
-    // if(item.password===)
+  };
+
+  const guestDelete = (passwordCheck, item) => {
+    console.log(passwordCheck, "passwordCheck");
+    console.log(item.password);
+    if (passwordCheck === item.password) {
+      cardRepository.deleteCard(item);
+    }
   };
 
   const fileUpload = (file) => {
@@ -198,13 +206,13 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
             <div className="user_editor_name_title">
               <input className="user_name" placeholder="이름" ref={nameRef} />
               <input className="user_title" placeholder="제목" ref={titleRef} />
-              {state.id === "guest" ? (
+              {state.id === "guest" && (
                 <input
                   className="password"
                   placeholder="비밀번호"
                   ref={passwordRef}
                 />
-              ) : null}
+              )}
               {/* <select className="theme" ref={selectRef}>
                 <option value="Green">초록색</option>
                 <option value="Blue">파랑색</option>
