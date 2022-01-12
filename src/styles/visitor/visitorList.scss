@@ -165,12 +165,6 @@
         .user_title:focus {
           background-color: rgb(255, 249, 197);
         }
-        .deleteContainer {
-          .deleteBtn {
-          }
-          .nonmember-password {
-          }
-        }
       }
       .textarea_container {
         display: flex;
@@ -287,6 +281,21 @@
           }
           .deleteBtn:hover {
             color: red;
+          }
+          .deleteContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            .deleteBtn {
+            }
+            .nonmember-password {
+              width: 50%;
+              border: none;
+              border-bottom: 1px solid #c9c6c6;
+              background-color: #e7e7e7;
+              font-weight: 700;
+              margin-left: 10px;
+            }
           }
         }
         .user_message {

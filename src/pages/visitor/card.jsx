@@ -20,7 +20,7 @@ function Card({ item, cardDelete }) {
   // }
   const passwordCheck = useRef();
 
-  // console.log(item, "아이템<<<<<<<");
+  console.log(item, "아이템<<<<<<<");
 
   const url = fileURL || DEFAULT_IMAGE;
   return (
@@ -33,6 +33,12 @@ function Card({ item, cardDelete }) {
         <div className="user_delete">
           <div className="user_title">{titleRef}</div>
           <div className="deleteContainer">
+            <div
+              className="deleteBtn"
+              onClick={() => cardDelete(item || passwordCheck.current.value)}
+            >
+              삭제
+            </div>
             {item.password && (
               <input
                 className="nonmember-password"
@@ -40,12 +46,6 @@ function Card({ item, cardDelete }) {
                 ref={passwordCheck}
               />
             )}
-            <div
-              className="deleteBtn"
-              onClick={() => cardDelete(item, passwordCheck.current.value)}
-            >
-              삭제
-            </div>
           </div>
         </div>
         <div className="user_message">{textareaRef}</div>
