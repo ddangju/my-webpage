@@ -4,6 +4,7 @@ import line1 from "../../images/취소선2.png";
 import deleteBtn from "../../images/삭제.png";
 import checkBtn from "../../images/체크.png";
 import Icons from "../../components/icons";
+import clockImg from "../../images/clock.png";
 
 const Todo = () => {
   // let inputRef = useRef();
@@ -49,6 +50,7 @@ const Todo = () => {
         </div>
         <div className="todo_list_Container">
           <div className="inputTitle">TO DO LIST!</div>
+          <img src={clockImg} alt="clock" className="clockImg" />
           <div className="formContainer">
             <input
               className="inputContainer"

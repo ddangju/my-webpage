@@ -20,8 +20,6 @@ function Card({ item, cardDelete }) {
   // }
   const passwordCheck = useRef();
 
-  console.log(item, "아이템<<<<<<<");
-
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <div className="cardContainer">

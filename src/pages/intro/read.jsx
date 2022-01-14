@@ -99,13 +99,16 @@ const Read = ({ likeButton }) => {
           안녕하세요 프론트개발자 김연주입니다🤗 <br />이 웹은 windows98을
           모티브로하여 포트폴리오로 제작되었습니다. <br />
           현재 계속해서 리팩토링과 추가구현이 진행중입니다. <br />
-          Skill : Html/css(Scss, animate-css), JavaScript(ES6),
-          React(react-router-dom, function Component), Youtube API, googleAPI,
-          githubAPI, facebookAPI <br />
-          형상관리: git/github <br />
-          배포: vercel <br />
-          데이터베이스: firebase <br />
-          문의 및 버그 제보는 duswn4338@gmail.com
+          <span className="skill">Skill :</span>HTML/CSS(SASS, Animate-css),
+          JavaScript(ES6), React(React Router, Function Component) REST API
+          <br />
+          <span className="skill">Service : </span>Firebase version9(Realtime
+          Database, 로그인 기능),Youtube API, Postman, Cloudinary <br />
+          <span className="skill">형상관리:</span> Git/Github <br />
+          <span className="skill">배포:</span> vercel <br />
+          <span className="service">
+            문의 및 버그 제보는 duswn4338@gmail.com
+          </span>
           {/* </div> */}
           {/* <p className="text">
             개발자로 전향을 마음먹기 전, 서비스업에 근무하며 고객들의 원트를

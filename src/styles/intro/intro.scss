@@ -153,6 +153,14 @@
         }
         .introduceContext {
           line-height: 150%;
+          .skill {
+            font-weight: 900;
+            color: #edb20c;
+          }
+          .service {
+            font-weight: 900;
+            color: #9b9b9b;
+          }
         }
       }
     }
