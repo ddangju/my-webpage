@@ -91,6 +91,7 @@
           border: 3px solid grey;
           border-top: 1px solid rgb(252, 179, 191);
           animation: spin 2s linear infinite;
+          will-change: transform;
         }
 
         .user_editor_img {

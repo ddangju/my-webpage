@@ -12,7 +12,7 @@ class LikeButton {
     onValue(countRef, (snapshot) => {
       // console.log(snapshot, "스냅샷");
       let value = snapshot.val();
-      console.log(value, "값");
+      // console.log(value, "값");
       value && update(value.count);
 
       // snapshot.val(count);

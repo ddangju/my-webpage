@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/youtube/youtubeItem.scss";
 
 const VideoItem = (props) => {
-  // console.log(props.onVideoClick
+  console.log(props.item, "<<<<<<<<<<props.item");
   const displayType = props.display === "list" ? "list" : "grid";
   // console.log("아이템");
   return (

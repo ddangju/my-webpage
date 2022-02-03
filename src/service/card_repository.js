@@ -1,5 +1,4 @@
 import { firebaseApp } from "./firebase";
-
 import { getDatabase, set, ref, onValue, off, remove } from "firebase/database";
 
 class CardRepository {

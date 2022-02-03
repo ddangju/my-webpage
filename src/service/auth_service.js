@@ -10,6 +10,8 @@ import {
   signInAnonymously,
 } from "firebase/auth";
 
+// console.log(firebaseApp, "<<<<<<<<<<<<firebaseApp");
+
 class AuthService {
   nonMember(goVisitor) {
     const auth = getAuth(firebaseApp);
@@ -36,11 +38,11 @@ class AuthService {
     }
 
     const auth = getAuth(firebaseApp);
-
+    // console.log(auth, "<<<<<<auth");
     // console.log(provider);
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result, "회원");
+        // console.log(result, "회원");
         goVisitor(result.user.uid);
       })
       .catch((error) => {

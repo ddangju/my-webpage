@@ -8,7 +8,6 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   // console.log(props);
   const history = useHistory();
   let state = history.location.state;
-  console.log("state확인", history.location.state);
   const [userId, setUserId] = useState(state && state.id);
   const [file, setFile] = useState({ fileName: null, fileURL: null });
   const [loading, setLoading] = useState(false);
@@ -56,8 +55,8 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
   };
 
   const guestDelete = (passwordCheck, item) => {
-    console.log(passwordCheck, "passwordCheck");
-    console.log(item.password);
+    // console.log(passwordCheck, "passwordCheck");
+    // console.log(item.password);
     if (passwordCheck === item.password) {
       cardRepository.deleteCard(item);
     }
@@ -190,6 +189,7 @@ const VisitorList = ({ cardRepository, authService, imgChange }) => {
                 className="userImgFile"
               />
               {loading && <div className="loading"></div>}
+              {/* <div className="loading"></div> */}
               {!file.fileURL ? (
                 <button className="imgBtn" onClick={onBtnClick}>
                   사진올리기

@@ -10,7 +10,7 @@ const YoutubeMain = (props) => {
   const history = useHistory();
   const state = history.location.state;
 
-  console.log(state, "state!!");
+  // console.log(state, "state!!");
   // console.log(state.inputValue, "나는state");
 
   // const searchList = history.location.state.searchList;
@@ -19,6 +19,7 @@ const YoutubeMain = (props) => {
   const [selected, setSelected] = useState();
   ///비디오 선택
   const selectVideo = (video) => {
+    console.log(video, "<<<<<<<<video");
     setSelected(video);
   };
 
@@ -90,7 +91,7 @@ const YoutubeMain = (props) => {
   ///사용자id가 넘어오면서 실행
 
   return (
-    <div>
+    <>
       <YoutubeNav search={search} user={user}></YoutubeNav>
       <section className="detail_list_Container">
         {/* {selected && (
@@ -102,7 +103,7 @@ const YoutubeMain = (props) => {
           <VideoList video={video} onVideoClick={selectVideo} />
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
